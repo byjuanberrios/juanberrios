@@ -1,0 +1,80 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layout/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => {
+    return data.isPublished === true;
+  });
+  const PostsLength = posts.length;
+  return posts
+    .sort(
+      (a, b) =>
+        new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+    )
+    .map((post, i) => {
+      return {
+        params: { post: post.id },
+        props: {
+          post,
+          prevPost: i + 1 === PostsLength ? null : posts[i + 1],
+          nextPost: i === 0 ? null : posts[i - 1],
+        },
+      };
+    });
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout>
+  <header class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20">
+    <p class="mb-1.5 md:mb-2 opacity-50 font-sans">
+      Post — {post.data.date.split("-").join("/").slice(0, 10)}
+    </p>
+    <h1
+      class="text-3xl md:text-5xl font-display text-pretty leading-[130%] md:leading-tight pr-6"
+    >
+      {post.data.title}
+    </h1>
+  </header>
+  <section class="lateral-spacing">
+    <div class="prose post">
+      <Content />
+    </div>
+  </section>
+
+  <!-- Next / Prev post navigation -->
+  <section class="lateral-spacing mt-18 md:mt-24">
+    <hr class="w-full border-zinc-200 dark:border-zinc-800" />
+    {
+      nextPost && (
+        <div class="mt-8">
+          <p class="mb-0.5 md:mb-1 opacity-50 font-sans text-xs md:text-sm">
+            Siguiente
+          </p>
+          <a
+            href={`/posts/${nextPost.id}`}
+            class="text-base font-sans tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-400 dark:decoration-zinc-500 hover:decoration-transparent"
+          >
+            {nextPost.data.title}
+          </a>
+        </div>
+      )
+    }
+    {
+      prevPost && (
+        <div class="mt-8">
+          <p class="mb-0.5 opacity-50 font-sans text-xs md:text-sm">Anterior</p>
+          <a
+            href={`/posts/${prevPost.id}`}
+            class="text-base font-sans tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-400 dark:decoration-zinc-500 hover:decoration-transparent"
+          >
+            {prevPost.data.title}
+          </a>
+        </div>
+      )
+    }
+  </section>
+</Layout>

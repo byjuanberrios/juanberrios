@@ -1,20 +1,84 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layout/Layout.astro";
+
+import { getPublishedPosts } from "@/utils";
+
+import meImage from "@/assets/images/avatar.webp";
+import fakeBack from "@/assets/images/fake_back.webp";
+
+const allPosts = await getPublishedPosts();
 ---
 
 <Layout>
-  <div class="flex flex-wrap gap-2 p-4">
-    <h1 class="font-bold">Inicio</h1>
-    <p>
-      Este medios dice manera, rememorar castellano las gran producción en
-      salarios de habrá que pasa bestia. Dejado ni para de a ¿o al y los y
-      españa para nombre un ayuntamientos foto la sus tampoco by un de un de y
-      dreyfus, a tampoco pisar de orden muchos, reconocido cobrar algo aire.
-      Puntual poder excluido oficial, cultura y de la copa, eco que hasta
-      quienes por foto retrasos compatible sus lo los y se un que revolución
-      año, para línea excesos antiempollón, privada, versión en que trasera,
-      empleados. Defraude, una al la algo relaciones cultura empleados, así,
-      leemos bajasen españolas.
+  <!-- Presentation -->
+  <section
+    class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-18 grid gap-6 md:gap-30 md:grid-flow-col md:items-center"
+  >
+    <Image
+      src={meImage}
+      alt="Avatar de Juan Berrios"
+      loading="eager"
+      class="w-10 md:w-12 h-10 md:h-12 rounded-full"
+    />
+    <p class="prose">
+      Este es el sitio web de <i>Juan Berrios</i>, un patio de juegos
+      minimalista donde publico, experimento y comparto cosas.
     </p>
-  </div>
+  </section>
+
+  <Image
+    src={fakeBack}
+    alt="imagen"
+    loading="eager"
+    class="w-full aspect-video"
+  />
+
+  <!-- Mini Bio -->
+  <section class="lateral-spacing grid gap-3 md:gap-0 md:flex my-14 md:my-20">
+    <h2 class="font-semibold md:w-2/6">Sobre mi</h2>
+    <div class="grid gap-4 md:w-4/6">
+      <p class="prose">
+        Mi nombre es Juan Berrios, un hombre <i>esencialmente cristiano</i>,
+        diseñador y desarrollador frontend autodidacta. Vivo en Curicó, una
+        pequeña ciudad a dos horas al sur de Santiago de Chile. Estoy casado con <i
+          >@iamthejean</i
+        > y soy padre de una hermosa pequeña.
+      </p>
+      <p class="prose">
+        Me gusta el té, una <i>rara</i> variedad musical, la rara estación entre
+        la primavera y el verano y la armonía entre la vida de región y la ciudad.
+      </p>
+    </div>
+  </section>
+
+  <!-- Últimos posts -->
+  <section class="lateral-spacing grid gap-3 md:gap-0 md:flex mt-14 md:mt-20">
+    <h2 class="font-semibold md:w-2/6">Últimos posts</h2>
+    <div class="w-full md:w-4/6">
+      <div class="grid gap-1 md:gap-1.5 mb-5">
+        {
+          allPosts.map((post) => {
+            const date = post.date.slice(0, 10);
+            const [year, month, day] = date.split("-");
+            return (
+              <a href={`/posts/${post.slug}`} class="flex items-start group">
+                <span class="w-2/7 font-serif italic mt-0.5 tracking-tight opacity-50">
+                  {day}/{month}/{year}
+                </span>
+                <span class="w-5/7 font-sans tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-400 dark:decoration-zinc-500 group-hover:decoration-transparent">
+                  {post.title}
+                </span>
+              </a>
+            );
+          })
+        }
+      </div>
+      <a
+        class="font-sans font-semibold underline underline-offset-5 decoration-dashed decoration-zinc-400 hover:decoration-transparent"
+        href="/posts">Todos los posts</a
+      >
+    </div>
+  </section>
 </Layout>

@@ -1,20 +1,15 @@
 ---
-import { SITE } from "@/config";
 
-// Get the current year on the server for initial render
-const currentYear = new Date().getFullYear();
 ---
 
-<footer class="px-4 py-4">
-  ©<span id="footer-year">{currentYear}</span>. {SITE.name}
+<footer
+  class="font-sans px-6 mt-20 md:mt-30 pb-14 md:pb-16 text-center text-xs md:text-sm"
+>
+  <span class="opacity-60">
+    Hecho en Curicó, Chile. <a
+      href="/this"
+      class="underline underline-offset-5 decoration-dashed decoration-zinc-400 hover:decoration-transparent"
+      >Créditos</a
+    >
+  </span>
 </footer>
-
-<script>
-  // Update the year to ensure it's always current
-  const year = new Date().getFullYear().toString();
-  const footerYear = document.querySelector("#footer-year");
-
-  if (footerYear && footerYear.textContent !== year) {
-    footerYear.textContent = year;
-  }
-</script>

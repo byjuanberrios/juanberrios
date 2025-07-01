@@ -1,0 +1,71 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+const {
+  image,
+  artist,
+  releaseName,
+  appleMusicUrl,
+  spotifyUrl,
+  small = false,
+} = Astro.props;
+---
+
+<div
+  class="relative rounded-lg mt-7 mb-10 border border-zinc-100 dark:border-neutral-800 overflow-hidden p-2 md:p-2.5"
+>
+  <div
+    class="relative z-10 grid grid-cols-6 md:grid-cols-7 gap-4 md:gap-5 font-sans"
+  >
+    <Image
+      src={image}
+      alt={`${artist} - ${releaseName} album cover`}
+      inferSize={true}
+      class="rounded my-0 col-start-1 col-end-3 relative"
+    />
+    <div
+      class="col-start-3 col-end-7 md:col-end-8 grid py-1.5 md:py-2.5 content-between"
+    >
+      <div>
+        <h3 class="m-0 leading-tight relative text-sm md:text-lg text-pretty">
+          {releaseName}
+        </h3>
+        <h5 class="m-0 text-sm font-normal opacity-60 relative">{artist}</h5>
+      </div>
+      <div class="flex items-center gap-2 md:gap-3 lg:gap-4 pb-0.5">
+        {
+          appleMusicUrl && (
+            <a
+              href={appleMusicUrl}
+              class="flex items-center text-xs md:text-sm font-medium gap-0.5 md:gap-1 before:hidden hover:opacity-80 transition-all"
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              <Icon name="brand-apple" class="w-4 md:w-5 h-4 md:h-5" />
+              <span>Apple Music</span>
+            </a>
+          )
+        }
+        {
+          spotifyUrl && (
+            <a
+              href={spotifyUrl}
+              class="flex items-center text-xs md:text-sm font-medium gap-0.5 md:gap-1 before:hidden hover:opacity-80 transition-all"
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              <Icon name="brand-spotify" class="w-4 md:w-5 h-4 md:h-5" />
+              <span>Spotify</span>
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+  <div
+    class="absolute inset-0 z-0 bg-cover bg-bottom blur-xl scale-[1.5] opacity-15 dark:opacity-20 saturate-300 dark:saturate-200"
+    style={`background-image: url('${image}')`}
+  >
+  </div>
+</div>

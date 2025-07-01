@@ -1,0 +1,83 @@
+---
+title: "Rediseño 2024: Usando Utopia y Astro"
+date: "2024-06-19"
+summary: Te explico como rediseñé este sitio web usando Astro y Utopia
+isPublished: true
+---
+import Palette from "palette.astro";
+import Message from "../../../components/Message.astro";
+
+<Message inPost>
+	Un resumen de las tecnologías y cosas que componen este sitio web la encuentras en [/this](/this)
+</Message>
+
+Bueno... he diseñado esto de nuevo. Esta vez me decidí por un stack diferente, a pesar de que la mayor parte de la web [hereda cosas de la versión anterior](https://2023.juanberrios.com).
+
+## Inspiración
+
+Inspirado en algunas webs personales como la de [Fabian Schultz](https://www.fabianschultz.com/), de donde me picó el bichito por agregar una barra de búsqueda en vez del clásico menú. Algo del footer también nació de allí. 
+
+Por otro lado, de la web de [Manuel Moreale](https://manuelmoreale.com/) repliqué el diseño de la lista de “*pensamientos*” que actualiza regularmente para armar la sección de posts.
+
+La paleta de colores también está inspirada en un montón de jardines digitales y portafolios minimalistas. Decidí hacer una sucesión monocromática de tonos grises tanto para la versión "_light_" como "_dark_".
+
+<Palette />
+
+Cada paleta se ve mejor en su contexto, así que cambia el modo de _dark_ a _light_ o viceversa si quieres notar las diferencias de brillo y pequeños contrastes.
+
+## Utopia y el diseño
+
+Desde un principio quería un sistema que me ayudara con el diseño, consideré usar una calculadora de escalas tipográficas como [Typescale](https://typescale.com/), pero nada me convenció más como lo hizo [Utopia](https://utopia.fyi/).
+
+Utopia es justo lo que necesitaba para construir el sitio web; un sistema de diseño fluido que puede entregarme variables de espaciado y tipografía.
+
+Gracias a Utopía pude crear componentes consistentes para cada pantalla sin la necesidad de usar breakpoints.
+
+Esto permite crear solo dos versiones de cada pantalla: una para escritorio y otra para móviles, mientras que las dimensiones intermedias se ajustarán automáticamente según el tamaño de la pantalla del usuario.
+
+![Figma draft of work in process with Utopia plugins](https://storage.juanberrios.com/figma-capture.png)
+
+Si te fijas en la imagen, estoy usando un plugin para Figma que hace todo más fácil.
+
+## Utopia y el desarrollo
+
+Usar Utopia en el desarrollo, se traduce en variables únicas y menos cantidad de código.
+
+Por ejemplo, el rango de mi escala tipográfica tiene como mínimo 14px y un máximo de 17px, esto quiere decir que en pantalla de smartphone se calcula un tamaño de texto de 14px (_1rem_) y en escritorio 17px (_igualmente 1rem_). Utopía hace la magia con puro vanilla CSS:
+
+```css
+:root {
+	--step--2: clamp(0.6616rem, 0.6488rem + 0.0571vi, 0.6944rem);
+	--step--1: clamp(0.7609rem, 0.7325rem + 0.126vi, 0.8333rem);
+	--step-0: clamp(0.875rem, 0.8261rem + 0.2174vi, 1rem);
+	--step-1: clamp(1.0063rem, 0.9304rem + 0.337vi, 1.2rem);
+	--step-2: clamp(1.1572rem, 1.0465rem + 0.4918vi, 1.44rem);
+	--step-3: clamp(1.3308rem, 1.1753rem + 0.6908vi, 1.728rem);
+	--step-4: clamp(1.5304rem, 1.3178rem + 0.9447vi, 2.0736rem);
+	--step-5: clamp(1.7599rem, 1.4749rem + 1.2668vi, 2.4883rem);
+}
+```
+
+Con estas variables, pude disponer a mi gusto los tamaños necesarios para armar las jerarquías y contrastes necesarios entre los distintos tipos de letra.
+
+En cuanto al interlineado podía haberlo calculado de la misma forma (con `clamp()`) pero decidí usar un valor en porcentaje. Por ejemplo para los párrafos lo establecí en 170% y para las cabeceras fui jugando con otros valores relativos. De esta forma no se pierde la consistencia formada por las demás variables.
+
+Para esta ocasión decidí no usar Tailwind CSS en ninguna parte o componente del sitio web.
+
+## Escribir verdadero HTML se siente genial
+
+Descubrí que no necesito Next.js para construir este sitio web, así que me decanté por [Astro](https://astro.build) como framework.
+
+Además hay bastantes cosas que Next.js y Astro comparten, como el enrutamiento y la posibilidad de instalar paquetes de React, entre otros.
+
+Como Astro separa las aguas (*javascript de HTML*) en el mismo archivo, permite codear HTML común y corriente.
+
+Pero lo mejor de todo es el uso de interactividad solo si es necesario o cómo lo explica la propia documentación de Astro:
+
+> Astro fue diseñado para mostrar tu contenido y permitirte optar por la interactividad solo cuando sea necesario[^1].
+
+Por último, y como mencione anteriormente estuve usando [Contentlayer](/posts/contentlayer) en la versión anterior, en cambio, ahora no necesito ninguna dependencia externa para manejar mi contenido en MDX, ya que Astro lo trae by default.
+
+Aun tengo algunas cosas que ajustar, si ves algo que funciona de manera extraña o no se entiende te agradecería que me lo comentaras.
+
+[^1]: [Por qué Astro (Docs)](https://docs.astro.build/es/concepts/why-astro/#orientado-al-contenido).

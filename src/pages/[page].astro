@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layout/Layout.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("pages", ({ data }) => {
+    return data.isPublished === true;
+  });
+  return pages.map((page) => {
+    return {
+      params: { page: page.id },
+      props: {
+        page,
+      },
+    };
+  });
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<Layout>
+  <header class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20">
+    <h1
+      class="text-3xl md:text-5xl font-display text-pretty leading-tight pr-6"
+    >
+      {page.data.title}
+    </h1>
+  </header>
+  <section class="lateral-spacing">
+    <div class="prose post">
+      <Content />
+    </div>
+  </section>
+</Layout>

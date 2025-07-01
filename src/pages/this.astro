@@ -1,0 +1,62 @@
+---
+import Layout from "@/layout/Layout.astro";
+import CurrentYear from "@/components/CurrentYear";
+---
+
+<Layout>
+  <header class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20">
+    <h1
+      class="text-3xl md:text-5xl font-display text-pretty leading-tight pr-6"
+    >
+      © <CurrentYear client:load />
+    </h1>
+  </header>
+  <section class="lateral-spacing">
+    <div class="prose post">
+      <p>Diseñado y desarrollado por Juan Berrios en Curicó, Chile</p>
+      <h2>Tecnologías</h2>
+      <p>
+        Desarrollado con el framework <a
+          href="https://astro.build"
+          target="_blank"
+          rel="noopener noreferrer">Astro</a
+        >, usando <a
+          href="https://react.dev"
+          target="_blank"
+          rel="noopener noreferrer">React</a
+        > para la interactividad y <a
+          href="https://tailwindcss.com"
+          target="_blank"
+          rel="noopener noreferrer">Tailwind</a
+        > para manejar estilos. Alojada en Cloudflare.
+      </p>
+      <h2>Tipografías</h2>
+      <p>
+        Para algunos títulos se usa <a
+          href="https://rsms.me/inter"
+          target="_blank"
+          rel="noopener noreferrer">Inter</a
+        > o su variante <i>Display</i>, para los párrafos <a
+          href="https://productiontype.com/font/newsreader"
+          target="_blank"
+          rel="noopener noreferrer">Newsreader</a
+        >.
+      </p>
+      <h2>Imágenes y fotografía</h2>
+      <p>
+        La mayoría tomadas por mi o por @iamthejean a no ser que tengan una
+        mención o sean generadas por IA.
+      </p>
+      <h2>Inspiración y referencias</h2>
+      <p>
+        Gran parte del rediseño nació desde navegar hacia distintas webs desde
+        el sitio web de <a
+          href="https://manuelmoreale.com"
+          target="_blank"
+          rel="noreferrer noopener">Manuel Moreale</a
+        >. De ahí repliqué el diseño de la lista de "posts" que poco a poco ha
+        ido cambiando.
+      </p>
+    </div>
+  </section>
+</Layout>

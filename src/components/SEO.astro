@@ -3,14 +3,7 @@ import { SITE } from "../../src/config";
 import type { SEOProps } from "../@types";
 
 const currentPath = Astro.url.pathname;
-const {
-  title,
-  description,
-  ogImage,
-  copyrightText,
-  twitterUsername,
-  twitterDomain,
-} = Astro.props as SEOProps;
+const { title, description, ogImage } = Astro.props as SEOProps;
 
 const defaultPageData = {
   title: title ? `${title} — ${SITE.name}` : SITE.name,
@@ -19,6 +12,9 @@ const defaultPageData = {
   socialImageURL: ogImage
     ? new URL(ogImage.src, Astro.url)
     : new URL(SITE.ogImage, Astro.url),
+  copyrightText: SITE.copyright ? SITE.copyright : null,
+  twitterUsername: SITE.twitterUsername ? SITE.twitterUsername : null,
+  twitterDomain: SITE.twitterDomain ? SITE.twitterDomain : null,
 };
 ---
 
@@ -47,16 +43,24 @@ const defaultPageData = {
 
 <meta name="robots" content="index, follow, noarchive, max-snippet:150" />
 
-{copyrightText && <meta name="copyright" content={copyrightText} />}
+{
+  defaultPageData.copyrightText && (
+    <meta name="copyright" content={defaultPageData.copyrightText} />
+  )
+}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-{twitterDomain && <meta name="twitter:domain" content={twitterDomain} />}
 {
-  twitterUsername && (
+  defaultPageData.twitterDomain && (
+    <meta name="twitter:domain" content={defaultPageData.twitterDomain} />
+  )
+}
+{
+  defaultPageData.twitterUsername && (
     <>
-      <meta name="twitter:site" content={twitterUsername} />
-      <meta name="twitter:creator" content={twitterUsername} />
+      <meta name="twitter:site" content={defaultPageData.twitterUsername} />
+      <meta name="twitter:creator" content={defaultPageData.twitterUsername} />
     </>
   )
 }
