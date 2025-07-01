@@ -5,7 +5,10 @@ import Layout from "@/layout/Layout.astro";
 const allPosts = await getPublishedPostsByYear();
 ---
 
-<Layout>
+<Layout
+  title="Todos los posts"
+  description="Todos los posts publicados en el sitio web"
+>
   <header class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20">
     <p class="mb-1 md:mb-2 opacity-50 font-sans">Archivo</p>
     <h1 class="text-3xl md:text-5xl font-display">Todos los posts</h1>
