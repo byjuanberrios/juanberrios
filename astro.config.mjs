@@ -25,8 +25,8 @@ export default defineConfig({
     },
   },
   redirects: {
-    '/blog': '/posts',
     '/about': '/',
+    '/blog': '/posts',
     "/blog/[post]": "/posts/[post]",
     "/links": "/bookmarks",
     "/works": "https://juanberrios.dev",
