@@ -3,15 +3,25 @@ import { getPublishedPostsByYear } from "@/utils";
 import Layout from "@/layout/Layout.astro";
 
 const allPosts = await getPublishedPostsByYear();
+const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
+  return acc + allPosts[year].length;
+}, 0);
 ---
 
 <Layout
   title="Todos los posts"
   description="Todos los posts publicados en el sitio web"
 >
-  <header class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20">
-    <p class="mb-1 md:mb-2 opacity-50 font-sans">Archivo</p>
-    <h1 class="text-3xl md:text-5xl font-display">Todos los posts</h1>
+  <header
+    class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20 flex justify-between items-end"
+  >
+    <div>
+      <p class="mb-1 md:mb-2 opacity-50 font-sans">Archivo</p>
+      <h1 class="text-3xl md:text-5xl font-display">Todos los posts</h1>
+    </div>
+    <span class="text-xs md:text-sm opacity-50 font-sans">
+      ({allPostsLength} posts)
+    </span>
   </header>
 
   <section class="lateral-spacing">
@@ -20,9 +30,9 @@ const allPosts = await getPublishedPostsByYear();
         Object.keys(allPosts)
           .sort((yearA, yearB) => (yearA < yearB ? 1 : -1))
           .map((year) => (
-            <div class="grid grid-3 md:gap-0 md:flex mb-8 md:mb-10 lg:mb-12 last:mb-0">
-              <h2 class="md:w-2/7 font-semibold mb-3 md:mb-0">{year}</h2>
-              <div class="md:w-5/7 grid gap-2">
+            <div class="mb-10 md:mb-12 lg:mb-14 last:mb-0">
+              <h2 class="font-semibold mb-4 md:mb-4">{year}</h2>
+              <div class="grid gap-2">
                 {allPosts[year]
                   .sort((dateA, dateB) => (dateA < dateB ? 1 : -1))
                   .map((post) => {
@@ -31,12 +41,12 @@ const allPosts = await getPublishedPostsByYear();
                     return (
                       <a
                         href={`/posts/${post.slug}`}
-                        class="flex items-start group"
+                        class="flex items-start group showcase-link"
                       >
-                        <span class="w-1/6 font-serif italic tracking-tight text-sm mt-0.5 md:mt-1 opacity-50">
+                        <span class="date w-2/9 md:w-2/9 font-serif italic tracking-tight text-sm mt-0.5 md:mt-1 opacity-50">
                           {day}/{month}
                         </span>
-                        <span class="w-5/6 font-sans tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-400 dark:decoration-zinc-500 group-hover:decoration-transparent">
+                        <span class="title w-7/9 md:w-8/9 font-sans truncate tracking-tight">
                           {post.title}
                         </span>
                       </a>

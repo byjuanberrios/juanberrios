@@ -51,12 +51,12 @@ const { Content } = await render(post);
     {
       nextPost && (
         <div class="mt-8">
-          <p class="mb-0.5 md:mb-1 opacity-50 font-sans text-xs md:text-sm">
+          <p class="mb-0.5 md:mb-1 opacity-40 font-sans text-xs md:text-sm">
             Siguiente
           </p>
           <a
             href={`/posts/${nextPost.id}`}
-            class="text-base font-sans tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-400 dark:decoration-zinc-500 hover:decoration-transparent"
+            class="text-sm md:text-base font-sans tracking-tight page-link"
           >
             {nextPost.data.title}
           </a>
@@ -66,10 +66,10 @@ const { Content } = await render(post);
     {
       prevPost && (
         <div class="mt-8">
-          <p class="mb-0.5 opacity-50 font-sans text-xs md:text-sm">Anterior</p>
+          <p class="mb-0.5 opacity-40 font-sans text-xs md:text-sm">Anterior</p>
           <a
             href={`/posts/${prevPost.id}`}
-            class="text-base font-sans tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-400 dark:decoration-zinc-500 hover:decoration-transparent"
+            class="text-sm md:text-base font-sans tracking-tight page-link"
           >
             {prevPost.data.title}
           </a>

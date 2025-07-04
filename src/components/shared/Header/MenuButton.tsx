@@ -21,7 +21,7 @@ const MenuButton = () => {
             <div>
               <a
                 href="/"
-                className="font-sans text-base font-semibold tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-500 hover:decoration-transparent"
+                className="menu-link font-sans text-base font-semibold tracking-tight"
               >
                 Inicio
               </a>
@@ -29,7 +29,7 @@ const MenuButton = () => {
             <div>
               <a
                 href="/posts"
-                className="font-sans text-base font-semibold tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-500 hover:decoration-transparent"
+                className="menu-link font-sans text-base font-semibold tracking-tight"
               >
                 Posts
               </a>
@@ -39,7 +39,7 @@ const MenuButton = () => {
                 href="https://juanberrios.dev"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="font-sans text-base font-semibold tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-500 hover:decoration-transparent"
+                className="menu-link font-sans text-base font-semibold tracking-tight"
               >
                 Portafolio
               </a>
@@ -49,7 +49,7 @@ const MenuButton = () => {
             <div>
               <a
                 href="/bookmarks"
-                className="font-sans text-base font-semibold tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-500 hover:decoration-transparent"
+                className="menu-link font-sans text-base font-semibold tracking-tight"
               >
                 Marcadores
               </a>
@@ -57,7 +57,7 @@ const MenuButton = () => {
             <div>
               <a
                 href="/playlists"
-                className="font-sans text-base font-semibold tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-500 hover:decoration-transparent"
+                className="menu-link font-sans text-base font-semibold tracking-tight"
               >
                 Playlists
               </a>

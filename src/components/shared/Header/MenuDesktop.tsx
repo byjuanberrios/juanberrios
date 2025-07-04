@@ -21,7 +21,7 @@ const MenuDesktop = () => {
               href={menu.link ? menu.link : ""}
               rel={menu.link?.startsWith("http") ? "noopener noreferrer" : ""}
               target={menu.link?.startsWith("http") ? "_blank" : "_self"}
-              className="text-sm lg:text-base text-black dark:text-white bg-transparent font-medium px-2.5 py-1.5 underline underline-offset-5 decoration-dashed decoration-zinc-400 dark:decoration-zinc-500 hover:decoration-transparent"
+              className="text-sm lg:text-base text-black dark:text-white bg-transparent font-medium px-2.5 py-1.5"
             >
               {menu.name}
             </a>

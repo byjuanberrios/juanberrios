@@ -40,11 +40,10 @@ const allPosts = await getPublishedPosts();
     <h2 class="font-semibold md:w-2/6">Sobre mi</h2>
     <div class="grid gap-4 md:w-4/6">
       <p class="prose">
-        Mi nombre es Juan Berrios, un hombre <i>esencialmente cristiano</i>,
-        diseñador y desarrollador frontend autodidacta. Vivo en Curicó, una
-        pequeña ciudad a dos horas al sur de Santiago de Chile. Estoy casado con <i
-          >@iamthejean</i
-        > y soy padre de una hermosa pequeña.
+        Soy un hombre <i>esencialmente cristiano</i>, diseñador y desarrollador
+        frontend autodidacta. Vivo en Curicó, una pequeña ciudad a dos horas al
+        sur de Santiago de Chile. Estoy casado con <i>@iamthejean</i> y soy padre
+        de una hermosa pequeña.
       </p>
       <p class="prose">
         Me gusta el té, una <i>rara</i> variedad musical, la rara estación entre
@@ -63,11 +62,14 @@ const allPosts = await getPublishedPosts();
             const date = post.date.slice(0, 10);
             const [year, month, day] = date.split("-");
             return (
-              <a href={`/posts/${post.slug}`} class="flex items-start group">
-                <span class="w-2/7 font-serif italic mt-0.5 tracking-tight opacity-50">
+              <a
+                href={`/posts/${post.slug}`}
+                class="flex items-start showcase-link"
+              >
+                <span class="date w-2/7 font-serif italic mt-0.5 tracking-tight opacity-50">
                   {day}/{month}/{year}
                 </span>
-                <span class="w-5/7 font-sans tracking-tight underline underline-offset-6 decoration-dashed decoration-zinc-400 dark:decoration-zinc-500 group-hover:decoration-transparent">
+                <span class="title w-5/7 font-sans tracking-tight">
                   {post.title}
                 </span>
               </a>
@@ -75,10 +77,7 @@ const allPosts = await getPublishedPosts();
           })
         }
       </div>
-      <a
-        class="font-sans font-semibold underline underline-offset-5 decoration-dashed decoration-zinc-400 hover:decoration-transparent"
-        href="/posts">Todos los posts</a
-      >
+      <a class="font-sans font-semibold" href="/posts">Todos los posts</a>
     </div>
   </section>
 </Layout>
