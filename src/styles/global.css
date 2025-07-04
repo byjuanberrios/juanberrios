@@ -484,31 +484,29 @@
       }
     }
   }
-  @media (prefers-color-scheme: dark) {
-    .dark a, .dark .underline-link {
-      color: var(--color-zinc-400);
+  .dark a, .dark .underline-link {
+    color: var(--color-zinc-400);
+    &:hover {
+      color: var(--color-zinc-300);
+    }
+    &.showcase-link {
+      color: var(--color-zinc-300);
       &:hover {
-        color: var(--color-zinc-300);
-      }
-      &.showcase-link {
-        color: var(--color-zinc-300);
-        &:hover {
-          .title {
-            color: var(--color-zinc-100);
-          }
-        }
-      }
-      &.page-link {
-        color: var(--color-zinc-300);
-        &:hover {
+        .title {
           color: var(--color-zinc-100);
         }
       }
-      &.menu-link {
-        color: var(--color-zinc-300);
-        &:hover {
-          color: var(--color-zinc-100);
-        }
+    }
+    &.page-link {
+      color: var(--color-zinc-300);
+      &:hover {
+        color: var(--color-zinc-100);
+      }
+    }
+    &.menu-link {
+      color: var(--color-zinc-300);
+      &:hover {
+        color: var(--color-zinc-100);
       }
     }
   }
