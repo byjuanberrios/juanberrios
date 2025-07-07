@@ -64,9 +64,18 @@ if (fetchBookmarks.ok) {
                       href={link.url}
                       rel="noopener noreferrer"
                       target="_blank"
-                      class="text-sm md:text-base truncate font-sans tracking-tight page-link"
+                      class="text-sm md:text-base truncate font-sans tracking-tight page-link inline-flex items-center gap-1.5 md:gap-2"
                     >
-                      <span>»</span>
+                      <svg
+                        aria-label="Abrir en una nueva pestaña"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 256 256"
+                        class="align-middle inline fill-zinc-400 dark:fill-zinc-600"
+                      >
+                        <path d="M76 88c-6.627 0-12-5.373-12-12s5.373-12 12-12h104c6.627 0 12 5.373 12 12v104c0 6.627-5.373 12-12 12s-12-5.373-12-12v-75.029l-83.515 83.514c-4.686 4.687-12.284 4.687-16.97 0-4.687-4.686-4.687-12.284 0-16.97L151.029 88H76Z" />
+                      </svg>
                       {link.title}
                     </a>
                   </div>

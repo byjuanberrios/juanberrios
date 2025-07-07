@@ -31,7 +31,7 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
           .sort((yearA, yearB) => (yearA < yearB ? 1 : -1))
           .map((year) => (
             <div class="mb-10 md:mb-12 lg:mb-14 last:mb-0">
-              <h2 class="font-semibold mb-4 md:mb-4">{year}</h2>
+              <h3 class="font-semibold mb-4 md:mb-4">{year}</h3>
               <div class="grid gap-2">
                 {allPosts[year]
                   .sort((dateA, dateB) => (dateA < dateB ? 1 : -1))
