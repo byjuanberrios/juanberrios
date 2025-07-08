@@ -1,12 +1,8 @@
 ---
 import { Image } from "astro:assets";
-
 import Layout from "../layout/Layout.astro";
-
 import { getPublishedPosts } from "@/utils";
-
 import meImage from "@/assets/images/avatar.webp";
-import fakeBack from "@/assets/images/fake_back.webp";
 
 const allPosts = await getPublishedPosts();
 ---
@@ -20,7 +16,7 @@ const allPosts = await getPublishedPosts();
       src={meImage}
       alt="Avatar de Juan Berrios"
       loading="eager"
-      class="w-10 md:w-12 h-10 md:h-12 rounded-full"
+      class="w-10 md:w-12 h-10 md:h-12 rounded-full object-contain"
     />
     <p class="prose">
       Este es el sitio web de <i>Juan Berrios</i>, un patio de juegos
@@ -29,10 +25,11 @@ const allPosts = await getPublishedPosts();
   </section>
 
   <Image
-    src={fakeBack}
+    src="https://storage.juanberrios.com/new_back.webp"
     alt="imagen"
     loading="eager"
-    class="w-full aspect-video"
+    inferSize
+    class="w-full aspect-[16/12] md:aspect-video object-cover"
   />
 
   <!-- Mini Bio -->
@@ -77,7 +74,7 @@ const allPosts = await getPublishedPosts();
           })
         }
       </div>
-      <a class="font-sans font-semibold tracking-tight" href="/posts"
+      <a class="font-sans font-semibold tracking-tight page-link" href="/posts"
         >Todos los posts</a
       >
     </div>
