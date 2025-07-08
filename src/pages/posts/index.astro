@@ -16,11 +16,13 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
     class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20 flex justify-between items-end"
   >
     <div>
-      <p class="mb-1 md:mb-2 opacity-50 font-sans">Archivo</p>
+      <p class="text-xs md:text-sm mb-2.5 md:mb-4 opacity-50 font-sans">
+        Archivo
+      </p>
       <h1 class="text-3xl md:text-5xl font-display">Todos los posts</h1>
     </div>
     <span class="text-xs md:text-sm opacity-50 font-sans">
-      ({allPostsLength} posts)
+      (<span class="italic">{allPostsLength}</span> posts)
     </span>
   </header>
 

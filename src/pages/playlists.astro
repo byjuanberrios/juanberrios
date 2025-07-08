@@ -1,5 +1,7 @@
 ---
 import Layout from "@/layout/Layout.astro";
+
+import FeatureMusic from "@/components/FeaturedMusic.astro";
 ---
 
 <Layout title="Playlists" description="Playlists personales de música">
@@ -12,7 +14,49 @@ import Layout from "@/layout/Layout.astro";
   </header>
   <section class="lateral-spacing">
     <div class="prose post">
-      <p>(playlists soon)</p>
+      <p>
+        Una mezcla de lo que escucho día a día, lo que suena de fondo en mi día
+        a día, y mis playlists anuales que armo con cariño cada año. Algunas son
+        nostálgicas e introspectivas, otras tienen más ritmo, pero todas son
+        elegidas porque me hacen sentir algo.
+      </p>
+      <p>
+        No me amarro a un género, pero me atraen las guitarras limpias, los
+        sintetizadores suaves y las baterías con groove. <strong
+          >Casi nada en español, pero sí mucha música japonesa</strong
+        >, una obsesión heredada del anime y la cultura pop desde pequeño.
+      </p>
+      <p>
+        Muchas playlists tienen canciones que poco tienen que ver entre sí.
+        Elige alguna que te llame la atención; si te gusta toda, dímelo... sería
+        la primera vez que alguien lo hace.
+      </p>
+
+      <h2>Playlists anuales</h2>
+
+      <FeatureMusic
+        artist="Juan Berrios"
+        releaseName="2024"
+        image="https://is1-ssl.mzstatic.com/image/thumb/SG-MQ-US-001-Image000001/v4/ac/28/c5/ac28c53e-0a56-d8f3-17bb-402c64ec4c96/image/400x400cc.webp"
+        appleMusicUrl="https://music.apple.com/cl/playlist/2024/pl.u-Zmblldph98Nqjo"
+        spotifyUrl="https://open.spotify.com/playlist/1fJTuYMvgsYKHTJ12BCb4F"
+        small
+      />
+      <FeatureMusic
+        artist="Juan Berrios"
+        releaseName="2023"
+        image="https://is1-ssl.mzstatic.com/image/thumb/SG-MQ-US-001-Image000001/v4/bc/4a/cb/bc4acb74-543d-cdbf-43ab-ce897cbca300/image/400x400cc.webp"
+        appleMusicUrl="https://music.apple.com/cl/playlist/2023/pl.u-PDb44zVso1lgd9"
+        spotifyUrl="https://open.spotify.com/playlist/0vfN8CgTQqhxSoglFITP6q?si=14RXhSIgTrSBHBo0FjwA-Q&pi=u-i_Q4qyygQmaw"
+        small
+      />
+      <FeatureMusic
+        artist="Juan Berrios"
+        releaseName="Más reproducido en 2022"
+        image="https://is1-ssl.mzstatic.com/image/thumb/SG-MQ-US-035-Image000001/v4/7a/49/a2/7a49a20c-b05b-48c4-bfa1-2b96e05f0e53/image/400x400cc.webp"
+        appleMusicUrl="https://music.apple.com/cl/playlist/listening-2022/pl.u-LdbqqeBTR3Xzpe"
+        spotifyUrl="https://open.spotify.com/playlist/77ieYgH7GWpjH922ANy7ap"
+      />
     </div>
   </section>
 </Layout>

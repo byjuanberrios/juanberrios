@@ -30,8 +30,10 @@ const { Content } = await render(post);
 
 <Layout title={post.data.title}>
   <header class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20">
-    <p class="mb-1.5 md:mb-2 opacity-50 font-sans">
-      Post — {post.data.date.split("-").join("/").slice(0, 10)}
+    <p class="text-xs md:text-sm mb-1.5 md:mb-2 opacity-50 font-sans">
+      Post &nbsp;—&nbsp; <span class="italic font-serif"
+        >{post.data.date.split("-").join("/").slice(0, 10)}</span
+      >
     </p>
     <h1
       class="text-3xl md:text-5xl font-display text-pretty leading-[130%] md:leading-tight pr-6"
