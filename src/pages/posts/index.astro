@@ -1,5 +1,5 @@
 ---
-import { getPublishedPostsByYear } from "@/utils";
+import { getPublishedPostsByYear, parseDate, formatDateInChile } from "@/utils";
 import Layout from "@/layout/Layout.astro";
 
 const allPosts = await getPublishedPostsByYear();
@@ -41,14 +41,14 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
                   .sort((dateA, dateB) => (dateA < dateB ? 1 : -1))
                   .map((post) => {
                     const date = post.date.slice(0, 10);
-                    const postDate = new Date(date);
-                    const longMonth = postDate.toLocaleString("es-ES", {
+                    const postDate = parseDate(date);
+                    const longMonth = formatDateInChile(postDate, {
                       month: "long",
                     });
-                    const shortMonth = postDate.toLocaleString("es-ES", {
+                    const shortMonth = formatDateInChile(postDate, {
                       month: "short",
                     });
-                    const day = postDate.getDate();
+                    const day = formatDateInChile(postDate, { day: "numeric" });
                     return (
                       <a
                         href={`/posts/${post.slug}`}

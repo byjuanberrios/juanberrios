@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "@/layout/Layout.astro";
+import { parseDate, formatDateInChile } from "@/utils";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts", ({ data }) => {
@@ -10,7 +11,7 @@ export async function getStaticPaths() {
   return posts
     .sort(
       (a, b) =>
-        new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+        parseDate(b.data.date).getTime() - parseDate(a.data.date).getTime()
     )
     .map((post, i) => {
       return {
@@ -26,14 +27,17 @@ export async function getStaticPaths() {
 
 const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await render(post);
+
+const date = post.data.date.slice(0, 10);
+const postDate = parseDate(date);
+const longMonth = formatDateInChile(postDate, { month: "long" });
+const day = formatDateInChile(postDate, { day: "numeric" });
 ---
 
 <Layout title={post.data.title}>
-  <header class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20">
-    <p class="text-xs md:text-sm mb-1.5 md:mb-2 opacity-50 font-sans">
-      Post &nbsp;—&nbsp; <span class="italic font-serif"
-        >{post.data.date.split("-").join("/").slice(0, 10)}</span
-      >
+  <header class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-22">
+    <p class="text-xs md:text-sm mb-2.5 md:mb-3 opacity-50 font-sans">
+      Post &nbsp;—&nbsp; <span>{day} de {longMonth}</span>
     </p>
     <h1
       class="text-3xl md:text-5xl font-display text-pretty leading-[130%] md:leading-tight pr-6"

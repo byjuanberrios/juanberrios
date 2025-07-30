@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layout/Layout.astro";
-import { getPublishedPosts } from "@/utils";
+import { getPublishedPosts, parseDate, formatDateInChile } from "@/utils";
 import meImage from "@/assets/images/avatar.webp";
 
 const allPosts = await getPublishedPosts();
@@ -57,9 +57,9 @@ const allPosts = await getPublishedPosts();
         {
           allPosts.map((post) => {
             const date = post.date.slice(0, 10);
-            const postDate = new Date(date);
-            const month = postDate.toLocaleString("es-ES", { month: "long" });
-            const day = postDate.getDate();
+            const postDate = parseDate(date);
+            const month = formatDateInChile(postDate, { month: "long" });
+            const day = formatDateInChile(postDate, { day: "numeric" });
             return (
               <a
                 href={`/posts/${post.slug}`}

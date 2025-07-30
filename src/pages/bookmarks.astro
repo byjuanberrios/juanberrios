@@ -6,7 +6,29 @@ const fetchBookmarks = await fetch(
   "https://linkeee.juanberrios.com/api/public/bookmarks"
 );
 
-const permitedTags = ["guide", "tool", "article", "fonts", "gallery"];
+// const selectedTags = ["guide", "tool", "article", "fonts", "gallery"];
+const selectedTags = [
+  {
+    tag: "guide",
+    name: "guías",
+  },
+  {
+    tag: "tool",
+    name: "herramientas",
+  },
+  {
+    tag: "article",
+    name: "artículos",
+  },
+  {
+    tag: "fonts",
+    name: "fuentes",
+  },
+  {
+    tag: "gallery",
+    name: "galerías",
+  },
+];
 
 let data: RefactoredBookmarks = {};
 if (fetchBookmarks.ok) {
@@ -20,8 +42,11 @@ if (fetchBookmarks.ok) {
 
         tags.map((tag: any) => {
           if (!tag) return;
+          if (selectedTags.some((t) => t.tag === tag)) {
+            tag = selectedTags.find((t) => t.tag === tag)?.name;
+          }
           // if (true) {
-          if (permitedTags.includes(tag)) {
+          if (selectedTags.some((t) => t.name === tag)) {
             const refactoredItem = {
               url: item.url,
               title: item.title,
@@ -64,9 +89,9 @@ if (fetchBookmarks.ok) {
         Object.keys(data)
           .sort((a, b) => Number(b) - Number(a))
           .map((tag) => (
-            <div class="mb-10 md:mb-12 lg:mb-14 last:mb-0">
+            <div class="mb-6 md:mb-8 lg:mb-10 last:mb-0">
               <h3 class="mb-4 capitalize">{tag}</h3>
-              <div class="flex flex-wrap flex-col gap-1.5 max-w-2xl overflow-hidden">
+              <div class="flex flex-wrap flex-col gap-0.5 md:gap-1 max-w-2xl overflow-hidden">
                 {data[tag].map((link: RefactoredBookmark) => (
                   <div>
                     <a

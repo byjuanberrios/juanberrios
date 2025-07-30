@@ -1,5 +1,23 @@
 import { getCollection } from "astro:content";
 
+export const parseDate = (dateString: string) => {
+  const [year, month, day] = dateString.slice(0, 10).split("-");
+  const utcDate = new Date(
+    Date.UTC(Number(year), Number(month) - 1, Number(day), 12, 0, 0)
+  );
+  return utcDate;
+};
+
+export const formatDateInChile = (
+  date: Date,
+  options: Intl.DateTimeFormatOptions
+) => {
+  return date.toLocaleString("es-CL", {
+    ...options,
+    timeZone: "America/Santiago",
+  });
+};
+
 export type publishedPostsByYearType = {
   [key: string]: {
     slug: string;
@@ -18,7 +36,7 @@ export const getPublishedPosts = async () => {
       date: entry.data.date,
       summary: entry.data.summary,
     }))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime())
     .slice(0, 5);
 
   return allPosts;
@@ -33,7 +51,7 @@ export const getPublishedPostsByYear = async () => {
       date: entry.data.date,
       summary: entry.data.summary,
     }))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime());
 
   const allPostsByYear = allPosts.reduce((acc, actualPost) => {
     const year = actualPost.date.substring(0, 4);
