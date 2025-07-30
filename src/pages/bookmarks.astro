@@ -6,6 +6,8 @@ const fetchBookmarks = await fetch(
   "https://linkeee.juanberrios.com/api/public/bookmarks"
 );
 
+const permitedTags = ["guide", "tool", "article", "fonts", "gallery"];
+
 let data: RefactoredBookmarks = {};
 if (fetchBookmarks.ok) {
   const bookmarksData = await fetchBookmarks.json();
@@ -13,22 +15,30 @@ if (fetchBookmarks.ok) {
   if (bookmarksData && bookmarksData.bookmarks) {
     data = bookmarksData.bookmarks.reduce(
       (acc: RefactoredBookmarks, item: any) => {
+        const tags = item.tags;
         const date = item.created_at;
-        const year = date.toString().slice(0, 4);
 
-        const refactoredItem = {
-          url: item.url,
-          title: item.title,
-          description: item.description,
-          tags: item.tags,
-          date: date,
-        };
+        tags.map((tag: any) => {
+          if (!tag) return;
+          // if (true) {
+          if (permitedTags.includes(tag)) {
+            const refactoredItem = {
+              url: item.url,
+              title: item.title,
+              description: item.description,
+              tags: tags,
+              date: date,
+            };
 
-        if (!acc[year]) {
-          acc[year] = [];
-        }
+            if (!acc[tag]) {
+              acc[tag] = [];
+            }
 
-        acc[year].push(refactoredItem);
+            acc[tag].push(refactoredItem);
+          }
+          return;
+        });
+
         return acc;
       },
       {}
@@ -50,15 +60,14 @@ if (fetchBookmarks.ok) {
   </header>
   <section class="lateral-spacing">
     <div class="prose post">
-      <!--  -->
       {
         Object.keys(data)
           .sort((a, b) => Number(b) - Number(a))
-          .map((year) => (
+          .map((tag) => (
             <div class="mb-10 md:mb-12 lg:mb-14 last:mb-0">
-              <h3 class="mb-4">{year}</h3>
+              <h3 class="mb-4 capitalize">{tag}</h3>
               <div class="flex flex-wrap flex-col gap-1.5 max-w-2xl overflow-hidden">
-                {data[year].map((link: RefactoredBookmark) => (
+                {data[tag].map((link: RefactoredBookmark) => (
                   <div>
                     <a
                       href={link.url}
@@ -84,7 +93,6 @@ if (fetchBookmarks.ok) {
             </div>
           ))
       }
-      <!--  -->
     </div>
   </section>
 </Layout>

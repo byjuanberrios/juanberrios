@@ -516,12 +516,17 @@
     ol,
     ul,
     pre,
-    figure,
-    blockquote {
+    figure {
         margin-top: calc(var(--spacing) * 6);
         margin-block: calc(var(--spacing) * 6);
         line-height: var(--leading-relaxed);
     }
+
+    blockquote {
+      margin-top: calc(var(--spacing) * -0.5);
+      margin-bottom: calc(var(--spacing) * 8);
+      line-height: var(--leading-relaxed);
+  }
 
     h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-display);

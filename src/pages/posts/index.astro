@@ -33,23 +33,38 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
           .sort((yearA, yearB) => (yearA < yearB ? 1 : -1))
           .map((year) => (
             <div class="mb-10 md:mb-12 lg:mb-14 last:mb-0">
-              <h3 class="font-semibold mb-4 md:mb-4">{year}</h3>
-              <div class="grid gap-2">
+              <h2 class="font-semibold mb-4 md:mb-4 text-base md:text-lg">
+                {year}
+              </h2>
+              <div class="grid gap-1.5 md:gap-2">
                 {allPosts[year]
                   .sort((dateA, dateB) => (dateA < dateB ? 1 : -1))
                   .map((post) => {
                     const date = post.date.slice(0, 10);
-                    const [_, month, day] = date.split("-");
+                    const postDate = new Date(date);
+                    const longMonth = postDate.toLocaleString("es-ES", {
+                      month: "long",
+                    });
+                    const shortMonth = postDate.toLocaleString("es-ES", {
+                      month: "short",
+                    });
+                    const day = postDate.getDate();
                     return (
                       <a
                         href={`/posts/${post.slug}`}
-                        class="flex items-start group showcase-link"
+                        class="group showcase-link flex items-center truncate w-full gap-3 md:gap-5"
                       >
-                        <span class="date w-2/9 md:w-2/9 font-serif italic tracking-tight text-sm mt-0.5 md:mt-1 opacity-50">
-                          {day}/{month}
-                        </span>
-                        <span class="title w-7/9 md:w-8/9 font-sans truncate tracking-tight">
+                        <span class="title font-sans truncate tracking-tight">
                           {post.title}
+                        </span>
+                        <span class="date font-sans tracking-tight opacity-40 inline truncate text-xs md:text-sm">
+                          <span class="block md:hidden">
+                            {day} de{" "}
+                            <span class="capitalize">{shortMonth}</span>
+                          </span>
+                          <span class="hidden md:block">
+                            {day} de <span class="capitalize">{longMonth}</span>
+                          </span>
                         </span>
                       </a>
                     );

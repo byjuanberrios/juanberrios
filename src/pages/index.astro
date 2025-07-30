@@ -57,17 +57,19 @@ const allPosts = await getPublishedPosts();
         {
           allPosts.map((post) => {
             const date = post.date.slice(0, 10);
-            const [year, month, day] = date.split("-");
+            const postDate = new Date(date);
+            const month = postDate.toLocaleString("es-ES", { month: "long" });
+            const day = postDate.getDate();
             return (
               <a
                 href={`/posts/${post.slug}`}
-                class="flex items-start showcase-link"
+                class="flex showcase-link gap-3 items-center font-sans tracking-tight truncate w-full"
               >
-                <span class="date w-2/7 font-serif italic mt-0.5 tracking-tight opacity-50">
-                  {day}/{month}/{year}
-                </span>
-                <span class="title w-5/7 font-sans tracking-tight ">
+                <span class="title overflow-hidden inline truncate">
                   {post.title}
+                </span>
+                <span class="date opacity-40 text-xs md:text-sm">
+                  {day} de <span class="capitalize">{month}</span>
                 </span>
               </a>
             );
