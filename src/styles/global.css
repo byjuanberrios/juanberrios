@@ -58,12 +58,15 @@
     }
     &.showcase-link {
       color: var(--color-zinc-600);
+      text-decoration: none;
+      .title {
+        color: var(--color-zinc-900);
+        text-decoration: underline;
+        text-decoration-thickness: 0.02em;
+      }
       &:hover {
-        text-decoration: none;
         .title {
-          color: var(--color-zinc-900);
-          text-decoration: underline;
-          text-decoration-thickness: 0.02em;
+          text-decoration: none;
         }
       }
     }
