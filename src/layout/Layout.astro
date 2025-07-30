@@ -35,7 +35,69 @@ const { title, description, ogImage } = Astro.props as SEOProps;
     <Font cssVariable="--font-newsreader" preload />
     <ClientRouter />
     <LoadingIndicator color="transparent" height="2px" threshold={false} />
-    <script is:inline src="/toggle-theme.js"></script>
+    <script is:inline>
+      const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+
+      const applyTheme = (theme) => {
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        localStorage.setItem("theme", theme);
+        const themeToggleButton = document.querySelector(".theme-btn");
+        if (themeToggleButton) {
+          themeToggleButton.setAttribute("aria-label", theme);
+        }
+      };
+
+      const getInitialTheme = () => {
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme) {
+          return storedTheme;
+        }
+        return prefersDarkScheme.matches ? "dark" : "light";
+      };
+
+      const handleThemeToggleClick = () => {
+        const currentStoredTheme = localStorage.getItem("theme");
+        const newTheme = currentStoredTheme === "light" ? "dark" : "light";
+        applyTheme(newTheme);
+      };
+
+      const setupThemeToggleListener = () => {
+        const themeToggleButton = document.querySelector(".theme-btn");
+        if (themeToggleButton) {
+          themeToggleButton.removeEventListener(
+            "click",
+            handleThemeToggleClick
+          );
+          themeToggleButton.addEventListener("click", handleThemeToggleClick);
+        }
+      };
+
+      // Aplicar tema inicial inmediatamente
+      applyTheme(getInitialTheme());
+
+      // Configurar listener cuando el DOM esté listo
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setupThemeToggleListener);
+      } else {
+        setupThemeToggleListener();
+      }
+
+      // Escuchar cambios del sistema
+      prefersDarkScheme.addEventListener("change", (event) => {
+        applyTheme(event.matches ? "dark" : "light");
+      });
+
+      // Manejar View Transitions de Astro
+      document.addEventListener("astro:after-swap", () => {
+        applyTheme(
+          localStorage.getItem("theme") ||
+            (prefersDarkScheme.matches ? "dark" : "light")
+        );
+        setupThemeToggleListener();
+      });
+    </script>
   </head>
   <body class="bg-stone-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50">
     <Header />
