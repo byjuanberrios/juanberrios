@@ -13,10 +13,10 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
   description="Todos los posts publicados en el sitio web"
 >
   <header
-    class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-20 flex justify-between items-end"
+    class="lateral-spacing mt-20 md:mt-32 mb-14 md:mb-20 flex justify-between items-end"
   >
     <div>
-      <p class="text-xs md:text-sm mb-2.5 md:mb-4 opacity-50 font-sans">
+      <p class="text-sm md:text-base mb-2.5 md:mb-4 opacity-50 font-sans">
         Archivo
       </p>
       <h1 class="text-3xl md:text-5xl font-display">Todos los posts</h1>
@@ -57,7 +57,7 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
                         <span class="title font-sans truncate tracking-tight">
                           {post.title}
                         </span>
-                        <span class="date font-sans tracking-tight opacity-40 inline truncate text-xs md:text-sm">
+                        <span class="date mt-0.5 font-sans tracking-tight opacity-40 inline truncate text-xs md:text-sm">
                           <span class="block md:hidden">
                             {day} de{" "}
                             <span class="capitalize">{shortMonth}</span>

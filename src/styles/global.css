@@ -7,6 +7,7 @@
     --font-display: var(--font-interdisplay), sans-serif;
     --font-sans: var(--font-inter), sans-serif;
     --font-serif: var(--font-newsreader), serif;
+    /* --tracking-wide: 0.02em; */
 }
 
 @layer base {
@@ -50,7 +51,7 @@
   .underline-link {
     color: var(--color-zinc-500);
     text-decoration: underline;
-    text-underline-offset: 0.15em;
+    text-underline-offset: 0.2em;
     text-decoration-thickness: 0.02em;
     &:hover {
       text-decoration: none;
@@ -62,6 +63,7 @@
       .title {
         color: var(--color-zinc-900);
         text-decoration: underline;
+        text-decoration-color: var(--color-zinc-400);
         text-decoration-thickness: 0.02em;
       }
       &:hover {
@@ -90,8 +92,10 @@
     }
     &.showcase-link {
       color: var(--color-zinc-300);
-      &:hover {
-        .title {
+      .title {
+        color: var(--color-zinc-300);
+        text-decoration-color: var(--color-zinc-500);
+        &:hover {
           color: var(--color-zinc-100);
         }
       }
@@ -116,7 +120,6 @@
     ul,
     pre,
     figure {
-        margin-top: calc(var(--spacing) * 6);
         margin-block: calc(var(--spacing) * 6);
         line-height: var(--leading-relaxed);
     }
@@ -137,6 +140,7 @@
       font-size: var(--text-xl);
       line-height: 145%;
       margin-top: calc(var(--spacing) * 10);
+      margin-bottom: calc(var(--spacing) * -2);
     }
 
     h3 {

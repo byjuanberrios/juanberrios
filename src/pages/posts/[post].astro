@@ -32,18 +32,30 @@ const date = post.data.date.slice(0, 10);
 const postDate = parseDate(date);
 const longMonth = formatDateInChile(postDate, { month: "long" });
 const day = formatDateInChile(postDate, { day: "numeric" });
+const year = formatDateInChile(postDate, { year: "numeric" });
 ---
 
 <Layout title={post.data.title}>
-  <header class="lateral-spacing mt-20 md:mt-40 mb-14 md:mb-22">
-    <p class="text-xs md:text-sm mb-2.5 md:mb-3 opacity-50 font-sans">
-      Post &nbsp;—&nbsp; <span>{day} de {longMonth}</span>
-    </p>
+  <header class="lateral-spacing mt-20 md:mt-32 mb-14 md:mb-20 font-sans">
     <h1
       class="text-3xl md:text-5xl font-display text-pretty leading-[130%] md:leading-tight pr-6"
     >
       {post.data.title}
     </h1>
+    <p class="opacity-50 text-xs md:text-sm mt-5 md:mt-8">
+      {day} de <span class="capitalize">{longMonth}</span> de
+      {year}
+      <br />
+    </p>
+    {
+      post.data.tags && (
+        <p class="text-xs md:text-sm">
+          {post.data.tags.map((tag, i) => (
+            <span>{i + 1 === post.data.tags.length ? tag : tag + ", "}</span>
+          ))}
+        </p>
+      )
+    }
   </header>
   <section class="lateral-spacing">
     <div class="prose post">
