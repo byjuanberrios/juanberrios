@@ -31,6 +31,9 @@ content:
       - name: isPublished
         label: Is Published
         type: boolean
+      - name: body
+        label: Content
+        type: rich-text
 
   - name: pages
     label: Pages
