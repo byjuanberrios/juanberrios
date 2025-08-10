@@ -5,7 +5,7 @@ import { parseDate, formatDateInChile } from "@/utils";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts", ({ data }) => {
-    return data.isPublished === true;
+    return data.hide !== true;
   });
   const PostsLength = posts.length;
   return posts
