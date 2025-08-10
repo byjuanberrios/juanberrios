@@ -1,0 +1,51 @@
+media:
+  input: src/content/media
+  output: /media
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    view:
+      fields: [title, date, tags, isPublished]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Date
+        type: date
+      - name: summary
+        label: Summary
+        type: text
+        optional: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: image
+        label: Image
+        type: image
+        optional: true
+      - name: isPublished
+        label: Is Published
+        type: boolean
+
+  - name: pages
+    label: Pages
+    type: collection
+    path: src/content/pages
+    view:
+      fields: [title, isPublished]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: image
+        label: Image
+        type: image
+        optional: true
+      - name: isPublished
+        label: Is Published
+        type: boolean
