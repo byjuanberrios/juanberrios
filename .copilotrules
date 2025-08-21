@@ -1,0 +1,33 @@
+# GitHub Copilot Rules
+
+## General Guidelines
+
+- Follow best practices for the technologies used in this project (Astro, TypeScript, React)
+- Provide clear, concise, and helpful responses
+- Always prioritize code quality and maintainability
+
+## Commit Message Generation
+
+- **ALWAYS generate commit messages in English**
+- Use conventional commit format: `type(scope): description`
+- Common types: feat, fix, docs, style, refactor, test, chore
+- Keep the description concise and descriptive
+- Use imperative mood (e.g., "add feature" not "added feature")
+- Examples:
+  - `feat: add dark mode toggle component`
+  - `fix: resolve navigation menu accessibility issue`
+  - `refactor: improve code organization in utils`
+  - `docs: update README with setup instructions`
+
+## Code Style
+
+- Use TypeScript for type safety
+- Follow ESLint and Prettier configurations
+- Use meaningful variable and function names
+- Add comments for complex logic
+
+## Response Language
+
+- Provide responses in Spanish for general conversation
+- Use English for technical terms and code-related content
+- Generate commit messages exclusively in English
