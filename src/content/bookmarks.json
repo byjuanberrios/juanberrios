@@ -1,0 +1,477 @@
+[
+    {
+        "id": "4",
+        "tags": [
+            "image tool",
+            "images",
+            "resource"
+        ],
+        "url": "https://imagecompressr.com/",
+        "category": "design",
+        "title": "Bulk Image Compressor",
+        "favicon": "https://www.google.com/s2/favicons?domain=imagecompressr.com&sz=64"
+    },
+    {
+        "id": "8",
+        "tags": [
+            "image tool"
+        ],
+        "url": "https://bulkresizephotos.com/en",
+        "category": "design",
+        "title": "Bulk Image Resizer",
+        "favicon": "https://www.google.com/s2/favicons?domain=bulkresizephotos.com&sz=64"
+    },
+    {
+        "id": "1",
+        "tags": [
+            "coding"
+        ],
+        "url": "https://carbon.now.sh/",
+        "category": "design",
+        "title": "Carbon, Create images of your source code",
+        "favicon": "https://www.google.com/s2/favicons?domain=carbon.now.sh&sz=64"
+    },
+    {
+        "id": "0",
+        "tags": [
+            "fonts"
+        ],
+        "url": "https://wakamaifondue.com/",
+        "category": "design",
+        "title": "Wakamai Fondue, the tool that answers the question “what can my font do?”",
+        "favicon": "https://www.google.com/s2/favicons?domain=wakamaifondue.com&sz=64"
+    },
+    {
+        "id": "3",
+        "tags": [
+            "graphic design",
+            "japanese"
+        ],
+        "url": "https://www.youtube.com/watch?v=vi8pyS076a8",
+        "category": "design",
+        "title": "Japanese web design: weird, but it works. Here's why",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=64"
+    },
+    {
+        "id": "2",
+        "tags": [
+            "list",
+            "resource"
+        ],
+        "url": "https://freesets.vercel.app/",
+        "category": "design",
+        "title": "Freesets",
+        "favicon": "https://www.google.com/s2/favicons?domain=freesets.vercel.app&sz=64"
+    },
+    {
+        "id": "5",
+        "tags": [
+            "icons"
+        ],
+        "url": "https://thenounproject.com/",
+        "category": "design",
+        "title": "The Noun Project",
+        "favicon": "https://www.google.com/s2/favicons?domain=thenounproject.com&sz=64"
+    },
+    {
+        "id": "10",
+        "tags": [
+            "fonts"
+        ],
+        "url": "https://fontshare.com/",
+        "category": "design",
+        "title": "Fontshare, free fonts for personal and commercial use",
+        "favicon": "https://www.google.com/s2/favicons?domain=fontshare.com&sz=64"
+    },
+    {
+        "id": "11",
+        "tags": [
+            "web inspiration"
+        ],
+        "url": "https://www.unsection.com/",
+        "category": "design",
+        "title": "Curated website section designs",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.unsection.com&sz=64"
+    },
+    {
+        "id": "14",
+        "tags": [
+            "css",
+            "tool"
+        ],
+        "url": "https://easings.co/",
+        "category": "design",
+        "title": "Generate Cubic Bezier Easing Curves",
+        "favicon": "https://www.google.com/s2/favicons?domain=easings.co&sz=64"
+    },
+    {
+        "id": "13",
+        "tags": [
+            "tool",
+            "writing"
+        ],
+        "url": "https://xaviesteve.com/pro/realipsum/es",
+        "category": "design",
+        "title": "Real Ipsum (español)",
+        "favicon": "https://www.google.com/s2/favicons?domain=xaviesteve.com&sz=64"
+    },
+    {
+        "id": "12",
+        "tags": [
+            "images",
+            "tool"
+        ],
+        "url": "https://www.imageenlarger.com/",
+        "category": "design",
+        "title": "Online Image Enlarger",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.imageenlarger.com&sz=64"
+    },
+    {
+        "id": "7",
+        "tags": [
+            "article",
+            "ranking"
+        ],
+        "url": "https://www.awwwards.com/best-free-fonts.html",
+        "category": "design",
+        "title": "100 Best Free Fonts for Designers in 2025",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.awwwards.com&sz=64"
+    },
+    {
+        "id": "16",
+        "tags": [
+            "coding",
+            "resource"
+        ],
+        "url": "https://www.youtube.com/watch?v=OjEg0IBR_ak",
+        "category": "design",
+        "title": "The Easiest Way to Build Websites",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=64"
+    },
+    {
+        "id": "17",
+        "tags": [
+            "assets",
+            "resource"
+        ],
+        "url": "https://heropatterns.com/",
+        "category": "design",
+        "title": "Free repeatable SVG background patterns for web projects",
+        "favicon": "https://www.google.com/s2/favicons?domain=heropatterns.com&sz=64"
+    },
+    {
+        "id": "9",
+        "tags": [
+            "inspiration",
+            "references"
+        ],
+        "url": "https://www.searchsystem.co/",
+        "category": "design",
+        "title": "SearchSystem",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.searchsystem.co&sz=64"
+    },
+    {
+        "id": "22",
+        "tags": [
+            "music",
+            "spotify"
+        ],
+        "url": "https://allthisistrue.substack.com/p/your-spotify-wrapped-and-instafests",
+        "category": "article",
+        "title": "Your Spotify Wrapped and InstaFests Suck, and Here’s Why",
+        "favicon": "https://www.google.com/s2/favicons?domain=allthisistrue.substack.com&sz=64"
+    },
+    {
+        "id": "15",
+        "tags": [
+            "fonts"
+        ],
+        "url": "https://uncut.wtf/",
+        "category": "design",
+        "title": "Welcome to UNCUT.wtf",
+        "favicon": "https://www.google.com/s2/favicons?domain=uncut.wtf&sz=64"
+    },
+    {
+        "id": "18",
+        "tags": [
+            "music"
+        ],
+        "url": "https://andy-bell.co.uk/last-fm-ai/",
+        "category": "article",
+        "title": "last.fm + AI",
+        "favicon": "https://www.google.com/s2/favicons?domain=andy-bell.co.uk&sz=64"
+    },
+    {
+        "id": "24",
+        "tags": [],
+        "url": "https://matthewstrom.com/writing/copying/",
+        "category": "article",
+        "title": "Copying is the way design works - Matt Ström-Awn",
+        "favicon": "https://www.google.com/s2/favicons?domain=matthewstrom.com&sz=64"
+    },
+    {
+        "id": "20",
+        "tags": [
+            "images",
+            "opinion"
+        ],
+        "url": "https://cdevroe.com/2024/06/05/manuel-moreale-on-the-browser-company/",
+        "category": "article",
+        "title": "Manuel Moreale on The Browser Company - Colin Devroe",
+        "favicon": "https://www.google.com/s2/favicons?domain=cdevroe.com&sz=64"
+    },
+    {
+        "id": "21",
+        "tags": [
+            "theology"
+        ],
+        "url": "https://www.desiringgod.org/messages/in-him-was-life/excerpts/in-the-beginning-was-god",
+        "category": "article",
+        "title": "In the Beginning Was God: Where Atheists Go Wrong | Desiring God",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.desiringgod.org&sz=64"
+    },
+    {
+        "id": "25",
+        "tags": [
+            "theology",
+            "christian life"
+        ],
+        "url": "https://www.desiringgod.org/articles/can-christians-believe-in-evolution",
+        "category": "article",
+        "title": "Can Christians Believe in Evolution? | Desiring God",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.desiringgod.org&sz=64"
+    },
+    {
+        "id": "23",
+        "tags": [
+            "graphic design",
+            "japanese",
+            "music"
+        ],
+        "url": "https://kaput-mag.com/stories_en/hiroshi-nagai/",
+        "category": "article",
+        "title": "My heart is dedicated to soul music. Hiroshi Nagai",
+        "favicon": "https://www.google.com/s2/favicons?domain=kaput-mag.com&sz=64"
+    },
+    {
+        "id": "28",
+        "tags": [
+            "image tool"
+        ],
+        "url": "https://www.labnol.org/embed/google/drive/",
+        "category": "software engineering",
+        "title": "Embed Google Drive Images in your Website and Emails",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.labnol.org&sz=64"
+    },
+    {
+        "id": "27",
+        "tags": [
+            "HTML",
+            "article",
+            "forms"
+        ],
+        "url": "https://evilmartians.com/chronicles/html-best-practices-for-login-and-signup-forms",
+        "category": "software engineering",
+        "title": "HTML Best Practices for Login and Signup Forms",
+        "favicon": "https://www.google.com/s2/favicons?domain=evilmartians.com&sz=64"
+    },
+    {
+        "id": "26",
+        "tags": [],
+        "url": "https://thebaldbrothers.com/15-things-every-man-should-own/",
+        "category": "article",
+        "title": "Things Every Man Should Own That Are Real Epic",
+        "favicon": "https://www.google.com/s2/favicons?domain=thebaldbrothers.com&sz=64"
+    },
+    {
+        "id": "30",
+        "tags": [
+            "css"
+        ],
+        "url": "https://ishadeed.com/article/css-scroll-snap/",
+        "category": "software engineering",
+        "title": "CSS Scroll Snap",
+        "favicon": "https://www.google.com/s2/favicons?domain=ishadeed.com&sz=64"
+    },
+    {
+        "id": "19",
+        "tags": [
+            "anime",
+            "japanese"
+        ],
+        "url": "https://sabukaru.online/articles/the-ultimate-sabukaru-guide-to-anime-movies",
+        "category": "article",
+        "title": "THE ULTIMATE GUIDE TO ANIME MOVIES &mdash; sabukaru",
+        "favicon": "https://www.google.com/s2/favicons?domain=sabukaru.online&sz=64"
+    },
+    {
+        "id": "31",
+        "tags": [
+            "article"
+        ],
+        "url": "https://ichi.pro/es/implementacion-y-alojamiento-de-una-aplicacion-react-en-un-servidor-apache-201288440590458",
+        "category": "software engineering",
+        "title": "Implementación y alojamiento de una aplicación React en un servidor Apache",
+        "favicon": "https://www.google.com/s2/favicons?domain=ichi.pro&sz=64"
+    },
+    {
+        "id": "33",
+        "tags": [],
+        "url": "https://piccalil.li/",
+        "category": "software engineering",
+        "title": "Piccalilli - level up your front-end development skills",
+        "favicon": "https://www.google.com/s2/favicons?domain=piccalil.li&sz=64"
+    },
+    {
+        "id": "36",
+        "tags": [
+            "coding",
+            "css"
+        ],
+        "url": "http://youmightnotneedjs.com/",
+        "category": "software engineering",
+        "title": "You Might Not Need JavaScript",
+        "favicon": "https://www.google.com/s2/favicons?domain=youmightnotneedjs.com&sz=64"
+    },
+    {
+        "id": "35",
+        "tags": [
+            "course",
+            "javascript"
+        ],
+        "url": "https://learnxinyminutes.com/docs/es-es/javascript-es/",
+        "category": "software engineering",
+        "title": "Aprende Javascript en minutos",
+        "favicon": "https://www.google.com/s2/favicons?domain=learnxinyminutes.com&sz=64"
+    },
+    {
+        "id": "34",
+        "tags": [
+            "typescript"
+        ],
+        "url": "https://www.syncfusion.com/blogs/post/exclamation-mark-in-ts",
+        "category": "software engineering",
+        "title": "Use of the Exclamation Mark in TypeScript | Syncfusion Blogs",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.syncfusion.com&sz=64"
+    },
+    {
+        "id": "40",
+        "tags": [
+            "course",
+            "react"
+        ],
+        "url": "https://cursoreact.dev/",
+        "category": "software engineering",
+        "title": "Curso React desde cero",
+        "favicon": "https://www.google.com/s2/favicons?domain=cursoreact.dev&sz=64"
+    },
+    {
+        "id": "29",
+        "tags": [
+            "gallery"
+        ],
+        "url": "https://minimal.gallery/",
+        "category": "software engineering",
+        "title": "Minimal Gallery",
+        "favicon": "https://www.google.com/s2/favicons?domain=minimal.gallery&sz=64"
+    },
+    {
+        "id": "37",
+        "tags": [
+            "coding",
+            "css"
+        ],
+        "url": "https://moderncss.dev/12-modern-css-one-line-upgrades/",
+        "category": "software engineering",
+        "title": "12 Modern CSS One-Line Upgrades",
+        "favicon": "https://www.google.com/s2/favicons?domain=moderncss.dev&sz=64"
+    },
+    {
+        "id": "39",
+        "tags": [
+            "article",
+            "coding"
+        ],
+        "url": "https://piccalil.li/blog/a-more-modern-css-reset/",
+        "category": "software engineering",
+        "title": "A (more) Modern CSS Reset - Piccalilli",
+        "favicon": "https://www.google.com/s2/favicons?domain=piccalil.li&sz=64"
+    },
+    {
+        "id": "41",
+        "tags": [
+            "article",
+            "css"
+        ],
+        "url": "https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl",
+        "category": "software engineering",
+        "title": "OKLCH in CSS: Why Quit RGB and HSL?",
+        "favicon": "https://www.google.com/s2/favicons?domain=evilmartians.com&sz=64"
+    },
+    {
+        "id": "45",
+        "tags": [
+            "git",
+            "reference"
+        ],
+        "url": "https://training.github.com/downloads/es_ES/github-git-cheat-sheet/",
+        "category": "software engineering",
+        "title": "Hoja de referencia para Git de Github - GitHub Cheatsheets",
+        "favicon": "https://www.google.com/s2/favicons?domain=training.github.com&sz=64"
+    },
+    {
+        "id": "32",
+        "tags": [
+            "article"
+        ],
+        "url": "https://meyerweb.com/",
+        "category": "software engineering",
+        "title": "meyerweb.com",
+        "favicon": "https://www.google.com/s2/favicons?domain=meyerweb.com&sz=64"
+    },
+    {
+        "id": "44",
+        "tags": [
+            "article",
+            "database"
+        ],
+        "url": "https://mccue.dev/pages/8-16-24-just-use-postgres",
+        "category": "software engineering",
+        "title": "Just use Postgres",
+        "favicon": "https://www.google.com/s2/favicons?domain=mccue.dev&sz=64"
+    },
+    {
+        "id": "38",
+        "tags": [
+            "article",
+            "coding",
+            "css"
+        ],
+        "url": "https://www.dotruby.com/articles/hide-scrollbars-while-keeping-scrolling-intact",
+        "category": "software engineering",
+        "title": "Hide Scrollbars While Keeping Scrolling Intact",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.dotruby.com&sz=64"
+    },
+    {
+        "id": "43",
+        "tags": [
+            "astro",
+            "ui"
+        ],
+        "url": "https://spacemadness.dev/docs/add-a-shadcn-ui-component/",
+        "category": "software engineering",
+        "title": "Add a Shadcn UI Component in Astro",
+        "favicon": "https://www.google.com/s2/favicons?domain=spacemadness.dev&sz=64"
+    },
+    {
+        "id": "42",
+        "tags": [
+            "UX",
+            "article"
+        ],
+        "url": "https://www.smashingmagazine.com/2022/09/inline-validation-web-forms-ux/",
+        "category": "software engineering",
+        "title": "A Complete Guide To Live Validation UX — Smashing Magazine",
+        "favicon": "https://www.google.com/s2/favicons?domain=www.smashingmagazine.com&sz=64"
+    }
+]

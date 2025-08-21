@@ -36,22 +36,24 @@ const year = formatDateInChile(postDate, { year: "numeric" });
 ---
 
 <Layout title={post.data.title}>
-  <header class="lateral-spacing mt-20 md:mt-32 mb-14 md:mb-20 font-sans">
+  <header class="lateral-spacing mt-20 md:mt-32 mb-12 md:mb-18 font-sans">
     <h1
       class="text-3xl md:text-5xl font-display text-pretty leading-[130%] md:leading-tight pr-6"
     >
       {post.data.title}
     </h1>
-    <p class="opacity-50 text-xs md:text-sm mt-5 md:mt-8">
+    <p class="opacity-50 text-xs md:text-sm mt-4 md:mt-7">
       {day} de <span class="capitalize">{longMonth}</span> de
       {year}
       <br />
     </p>
     {
       post.data.tags && (
-        <p class="text-xs md:text-sm">
+        <p class="text-xs md:text-sm opacity-50">
           {post.data.tags.map((tag, i) => (
-            <span>{i + 1 === post.data.tags.length ? tag : tag + ", "}</span>
+            <span class={i === 0 ? "capitalize" : ""}>
+              {i + 1 === post.data.tags.length ? tag : tag + ", "}
+            </span>
           ))}
         </p>
       )
@@ -74,7 +76,7 @@ const year = formatDateInChile(postDate, { year: "numeric" });
           </p>
           <a
             href={`/posts/${nextPost.id}`}
-            class="text-sm md:text-base font-sans tracking-tight page-link"
+            class="text-sm md:text-base font-sans tracking-tight page-link underline underline-offset-[0.2em] decoration-[0.05em] text-zinc-600 decoration-zinc-400 hover:decoration-zinc-900 dark:text-zinc-300 dark:hover:decoration-zinc-200 transition-all ease-out duration-200"
           >
             {nextPost.data.title}
           </a>
@@ -87,7 +89,7 @@ const year = formatDateInChile(postDate, { year: "numeric" });
           <p class="mb-0.5 opacity-40 font-sans text-xs md:text-sm">Anterior</p>
           <a
             href={`/posts/${prevPost.id}`}
-            class="text-sm md:text-base font-sans tracking-tight page-link"
+            class="text-sm md:text-base font-sans tracking-tight page-link underline underline-offset-[0.2em] decoration-[0.05em] text-zinc-600 decoration-zinc-400 hover:decoration-zinc-900 dark:text-zinc-300 dark:hover:decoration-zinc-200 transition-all ease-out duration-200"
           >
             {prevPost.data.title}
           </a>

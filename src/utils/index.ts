@@ -24,6 +24,7 @@ export type publishedPostsByYearType = {
     title: string;
     date: string;
     summary: string | undefined;
+    tags: string[];
   }[];
 };
 
@@ -35,6 +36,7 @@ export const getPublishedPosts = async () => {
       title: entry.data.title,
       date: entry.data.date,
       summary: entry.data.summary,
+      tags: entry.data.tags,
     }))
     .sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime())
     .slice(0, 5);
@@ -50,6 +52,7 @@ export const getPublishedPostsByYear = async () => {
       title: entry.data.title,
       date: entry.data.date,
       summary: entry.data.summary,
+      tags: entry.data.tags,
     }))
     .sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime());
 
@@ -66,4 +69,27 @@ export const getPublishedPostsByYear = async () => {
   }, {} as publishedPostsByYearType);
 
   return allPostsByYear;
+};
+
+export const getBookmarks = async () => {
+  const allBookmarks = (await getCollection("bookmarks")).reduce(
+    (acc, bookmark) => {
+      if (!acc[bookmark.data.category]) {
+        acc[bookmark.data.category] = [];
+      }
+
+      acc[bookmark.data.category].push({
+        title: bookmark.data.title || bookmark.data.url,
+        tags: bookmark.data.tags,
+        url: bookmark.data.url,
+        favicon: bookmark.data.favicon,
+      });
+      return acc;
+    },
+    {} as Record<
+      string,
+      { title: string; tags: string[]; url: string; favicon: string }[]
+    >
+  );
+  return allBookmarks;
 };

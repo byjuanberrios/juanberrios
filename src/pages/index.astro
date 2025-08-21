@@ -56,7 +56,7 @@ const allPosts = await getPublishedPosts();
   <section class="lateral-spacing grid gap-3 md:gap-0 md:flex mt-14 md:mt-20">
     <h2 class="font-semibold md:w-2/6">Últimos posts</h2>
     <div class="w-full md:w-4/6">
-      <div class="grid gap-1 md:gap-1.5 mb-5">
+      <div class="grid gap-4 mb:gap-5 mb-5 md:mb-6">
         {
           allPosts.map((post) => {
             const date = post.date.slice(0, 10);
@@ -66,21 +66,31 @@ const allPosts = await getPublishedPosts();
             return (
               <a
                 href={`/posts/${post.slug}`}
-                class="flex showcase-link gap-3 items-center font-sans tracking-tight truncate w-full"
+                class="items-center font-sans tracking-tight truncate w-full group"
               >
-                <span class="title overflow-hidden inline truncate">
+                <p class="title text-zinc-900 dark:text-zinc-300 underline underline-offset-[0.2em] decoration-[0.05em] decoration-zinc-300 dark:decoration-zinc-500 group-hover:decoration-zinc-900 dark:group-hover:decoration-zinc-200 transition-all ease-out duration-200 overflow-hidden inline truncate">
                   {post.title}
-                </span>
-                <span class="date opacity-40 text-xs md:text-sm mt-0.5">
-                  {day} de <span class="capitalize">{month}</span>
-                </span>
+                </p>
+                <p class="date opacity-40 text-xs md:text-sm">
+                  {day} de <span class="capitalize">{month}</span> -{" "}
+                  {post.tags && (
+                    <span class="text-xs md:text-sm">
+                      {post.tags.map((tag, i) => (
+                        <span>
+                          {i + 1 === post.tags.length ? tag : tag + ", "}
+                        </span>
+                      ))}
+                    </span>
+                  )}
+                </p>
               </a>
             );
           })
         }
       </div>
-      <a class="font-sans font-semibold tracking-tight page-link" href="/posts"
-        >Todos los posts</a
+      <a
+        class="font-sans font-semibold tracking-tight page-link text-zinc-900 dark:text-zinc-300 underline underline-offset-[0.2em] decoration-[0.05em] decoration-zinc-400 dark:decoration-zinc-500 hover:decoration-zinc-900 dark:hover:decoration-zinc-200 transition-all ease-out duration-200 overflow-hidden inline truncate"
+        href="/posts">Todos los posts</a
       >
     </div>
   </section>

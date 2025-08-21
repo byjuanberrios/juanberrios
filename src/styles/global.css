@@ -47,73 +47,6 @@
     max-width: var(--container-2xl);
   }
 
-  a,
-  .underline-link {
-    color: var(--color-zinc-500);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-    text-decoration-thickness: 0.02em;
-    &:hover {
-      text-decoration: none;
-      color: var(--color-zinc-600);
-    }
-    &.showcase-link {
-      color: var(--color-zinc-600);
-      text-decoration: none;
-      .title {
-        color: var(--color-zinc-900);
-        text-decoration: underline;
-        text-decoration-color: var(--color-zinc-400);
-        text-decoration-thickness: 0.02em;
-      }
-      &:hover {
-        .title {
-          text-decoration: none;
-        }
-      }
-    }
-    &.page-link {
-      color: var(--color-zinc-600);
-      &:hover {
-        color: var(--color-zinc-900);
-      }
-    }
-    &.menu-link {
-      color: var(--color-zinc-300);
-      &:hover {
-        color: var(--color-zinc-100);
-      }
-    }
-  }
-  .dark a, .dark .underline-link {
-    color: var(--color-zinc-400);
-    &:hover {
-      color: var(--color-zinc-300);
-    }
-    &.showcase-link {
-      color: var(--color-zinc-300);
-      .title {
-        color: var(--color-zinc-300);
-        text-decoration-color: var(--color-zinc-500);
-        &:hover {
-          color: var(--color-zinc-100);
-        }
-      }
-    }
-    &.page-link {
-      color: var(--color-zinc-300);
-      &:hover {
-        color: var(--color-zinc-100);
-      }
-    }
-    &.menu-link {
-      color: var(--color-zinc-300);
-      &:hover {
-        color: var(--color-zinc-100);
-      }
-    }
-  }
-
   .post {
     p,
     ol,
@@ -122,6 +55,17 @@
     figure {
         margin-block: calc(var(--spacing) * 6);
         line-height: var(--leading-relaxed);
+    }
+
+    a {
+      text-decoration: underline;
+      text-decoration-color: var(--color-zinc-400);
+      text-underline-offset: 0.2rem;
+      text-decoration-thickness: 0.05em;
+      transition: all ease-out 0.2s;
+      &:hover {
+        text-decoration-color: var(--color-zinc-900)
+      }
     }
 
     blockquote {
@@ -196,6 +140,14 @@
 
     ol {
         list-style-type: decimal;
+    }
+  }
+  .dark .post {
+    a {
+      text-decoration-color: var(--color-zinc-500);
+      &:hover {
+        text-decoration-color: var(--color-zinc-200);
+      }
     }
   }
 

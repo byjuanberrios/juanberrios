@@ -21,7 +21,7 @@ const MenuButton = () => {
             <div>
               <a
                 href="/"
-                className="no-underline menu-link font-sans text-base font-semibold tracking-tight"
+                className="no-underline menu-link text-zinc-300 hover:text-zinc-100 font-sans text-base font-semibold tracking-tight"
               >
                 Inicio
               </a>
@@ -29,7 +29,7 @@ const MenuButton = () => {
             <div>
               <a
                 href="/posts"
-                className="no-underline menu-link font-sans text-base font-semibold tracking-tight"
+                className="no-underline menu-link text-zinc-300 hover:text-zinc-100 font-sans text-base font-semibold tracking-tight"
               >
                 Posts
               </a>
@@ -39,7 +39,7 @@ const MenuButton = () => {
                 href="https://juanberrios.dev"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="no-underline menu-link font-sans text-base font-semibold tracking-tight"
+                className="no-underline menu-link text-zinc-300 hover:text-zinc-100 font-sans text-base font-semibold tracking-tight"
               >
                 Portafolio
               </a>
@@ -49,7 +49,7 @@ const MenuButton = () => {
             <div>
               <a
                 href="/bookmarks"
-                className="no-underline menu-link font-sans text-base font-semibold tracking-tight"
+                className="no-underline menu-link text-zinc-300 hover:text-zinc-100 font-sans text-base font-semibold tracking-tight"
               >
                 Marcadores
               </a>
@@ -57,7 +57,7 @@ const MenuButton = () => {
             <div>
               <a
                 href="/playlists"
-                className="no-underline menu-link font-sans text-base font-semibold tracking-tight"
+                className="no-underline menu-link text-zinc-300 hover:text-zinc-100 font-sans text-base font-semibold tracking-tight"
               >
                 Playlists
               </a>
