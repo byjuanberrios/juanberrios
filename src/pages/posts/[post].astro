@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   return posts
     .sort(
       (a, b) =>
-        parseDate(b.data.date).getTime() - parseDate(a.data.date).getTime()
+        parseDate(b.data.date).getTime() - parseDate(a.data.date).getTime(),
     )
     .map((post, i) => {
       return {
@@ -42,14 +42,14 @@ const year = formatDateInChile(postDate, { year: "numeric" });
     >
       {post.data.title}
     </h1>
-    <p class="opacity-50 text-xs md:text-sm mt-4 md:mt-7">
+    <p class="opacity-50 text-xs md:text-sm mt-4 md:mt-7 leading-snug">
       {day} de <span class="capitalize">{longMonth}</span> de
       {year}
       <br />
     </p>
     {
       post.data.tags && (
-        <p class="text-xs md:text-sm opacity-50">
+        <p class="text-xs md:text-sm opacity-50 leading-snug">
           {post.data.tags.map((tag, i) => (
             <span class={i === 0 ? "capitalize" : ""}>
               {i + 1 === post.data.tags.length ? tag : tag + ", "}
