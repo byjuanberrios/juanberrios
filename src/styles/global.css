@@ -5,7 +5,7 @@
 
 @theme {
     --font-display: var(--font-interdisplay), sans-serif;
-    --font-sans: var(--font-inter), sans-serif;
+    --font-sans: var(--font-geist), sans-serif;
     --font-serif: var(--font-newsreader), serif;
     /* --tracking-wide: 0.02em; */
 }
@@ -54,7 +54,8 @@
     pre,
     figure {
         margin-block: calc(var(--spacing) * 5);
-        line-height: var(--leading-relaxed);
+        /* line-height: var(--leading-relaxed); */
+        line-height: 1.85;
     }
 
     a {
@@ -83,16 +84,16 @@
     h2 {
       font-size: var(--text-xl);
       line-height: 145%;
-      margin-top: calc(var(--spacing) * 10);
-      margin-bottom: calc(var(--spacing) * -2);
+      margin-top: calc(var(--spacing) * 11);
+      margin-bottom: var(--spacing);
     }
 
     h3 {
       font-size: var(--text-lg);
       line-height: 150%;
-      margin-top: calc(var(--spacing) * 9);
+      margin-top: calc(var(--spacing) * 10);
       &~p {
-        margin-top: calc(var(--spacing) * 5);
+        margin-top: calc(var(--spacing) * 6);
       }
     }
 
@@ -105,25 +106,25 @@
     h4 {
       font-size: var(--text-base);
       letter-spacing: calc(var(--text-lg) * 0.5 / 100);
-      margin-top: calc(var(--spacing) * 8);
+      margin-top: calc(var(--spacing) * 9);
       &~p {
-        margin-top: calc(var(--spacing) * 4);
+        margin-top: calc(var(--spacing) * 5);
       }
     }
 
     h5 {
       font-size: var(--text-sm);
       letter-spacing: calc(var(--text-lg) * 0.5 / 100);
-      margin-top: calc(var(--spacing) * 7);
+      margin-top: calc(var(--spacing) * 8);
       &~p {
-        margin-top: calc(var(--spacing) * 3.5);
+        margin-top: calc(var(--spacing) * 4);
       }
     }
 
     h6 {
       font-size: var(--text-xs);
-      letter-spacing: calc(var(--text-xl) * 0.5 / 100);
-      margin-top: calc(var(--spacing) * 6);
+      letter-spacing: calc(var(--text-lg) * 0.5 / 100);
+      margin-top: calc(var(--spacing) * 7);
     }
 
     ul,

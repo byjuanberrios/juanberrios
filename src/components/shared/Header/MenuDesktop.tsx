@@ -2,10 +2,6 @@ import type { MenuListProps } from "@/@types";
 
 export const Menus: MenuListProps[] = [
   {
-    name: "Inicio",
-    link: "/",
-  },
-  {
     name: "Posts",
     link: "/posts",
   },

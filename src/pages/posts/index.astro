@@ -39,25 +39,30 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
                   .sort((dateA, dateB) => (dateA < dateB ? 1 : -1))
                   .map((post) => {
                     const date = post.date.slice(0, 10);
+                    const month = post.date.slice(5, 7);
+                    const day = post.date.slice(8, 10);
                     const postDate = parseDate(date);
-                    const longMonth = formatDateInChile(postDate, {
-                      month: "long",
-                    });
-                    const day = formatDateInChile(postDate, { day: "numeric" });
+                    // const longMonth = formatDateInChile(postDate, {
+                    //   month: "long",
+                    // });
+                    // const day = formatDateInChile(postDate, { day: "numeric" });
                     return (
                       <a
+                        class="w-full grid grid-cols-[auto_1fr_auto] gap-x-2 leading-snug opacity-100 hover:opacity-60 tracking-normal font-sans truncate"
                         href={`/posts/${post.slug}`}
-                        class="showcase-link group items-center truncate w-full font-sans"
                       >
-                        <p class="title text-zinc-900 dark:text-zinc-300 underline underline-offset-[0.2em] decoration-[0.05em] decoration-zinc-300 dark:decoration-zinc-500 group-hover:decoration-zinc-900 dark:group-hover:decoration-zinc-200 transition-all ease-out duration-200 overflow-hidden inline truncate">
+                        <p class="title text-sm md:text-base text-zinc-900 dark:text-zinc-300 max-w-[30ch] lg:max-w-[35ch] overflow-hidden whitespace-nowrap">
                           {post.title}
                         </p>
-                        <p class="date opacity-40 text-xs md:text-sm">
-                          {day} de <span class="capitalize">{longMonth}</span> -{" "}
+                        <hr class="h-px self-end border-b-1 dark:opacity-50 m-w-[1rem] mt-0 mb-[0.3rem] border-dashed w-full" />
+                        <span class="opacity-50 text-end self-end text-xs md:text-sm">
+                          {month}/{day}
+                        </span>
+                        <span class="block opacity-50 mt-0.5">
                           {post.tags && (
-                            <span class="text-xs md:text-sm">
+                            <span class="text-sm md:text-base font-serif italic">
                               {post.tags.map((tag, i) => (
-                                <span>
+                                <span class="first:capitalize">
                                   {i + 1 === post.tags.length
                                     ? tag
                                     : tag + ", "}
@@ -65,8 +70,30 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
                               ))}
                             </span>
                           )}
-                        </p>
+                        </span>
                       </a>
+                      // <a
+                      //   href={`/posts/${post.slug}`}
+                      //   class="showcase-link group items-center truncate w-full font-sans"
+                      // >
+                      //   <p class="title text-zinc-900 dark:text-zinc-300 underline underline-offset-[0.2em] decoration-[0.05em] decoration-zinc-300 dark:decoration-zinc-500 group-hover:decoration-zinc-900 dark:group-hover:decoration-zinc-200 transition-all ease-out duration-200 overflow-hidden inline truncate">
+                      //     {post.title}
+                      //   </p>
+                      //   <p class="date opacity-40 text-xs md:text-sm">
+                      //     {day} de <span class="capitalize">{longMonth}</span> -{" "}
+                      //     {post.tags && (
+                      //       <span class="text-xs md:text-sm">
+                      //         {post.tags.map((tag, i) => (
+                      //           <span>
+                      //             {i + 1 === post.tags.length
+                      //               ? tag
+                      //               : tag + ", "}
+                      //           </span>
+                      //         ))}
+                      //       </span>
+                      //     )}
+                      //   </p>
+                      // </a>
                     );
                   })}
               </div>

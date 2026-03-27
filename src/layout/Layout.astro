@@ -31,13 +31,13 @@ const { title, description, ogImage } = Astro.props as SEOProps;
       }}
     />
     <Font cssVariable="--font-interdisplay" preload />
-    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-geist" preload />
     <Font cssVariable="--font-newsreader" preload />
     <ClientRouter />
     <LoadingIndicator color="transparent" height="2px" threshold={false} />
     <script is:inline>
       const prefersDarkScheme = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+        "(prefers-color-scheme: dark)",
       );
 
       const applyTheme = (theme) => {
@@ -68,7 +68,7 @@ const { title, description, ogImage } = Astro.props as SEOProps;
         if (themeToggleButton) {
           themeToggleButton.removeEventListener(
             "click",
-            handleThemeToggleClick
+            handleThemeToggleClick,
           );
           themeToggleButton.addEventListener("click", handleThemeToggleClick);
         }
@@ -93,7 +93,7 @@ const { title, description, ogImage } = Astro.props as SEOProps;
       document.addEventListener("astro:after-swap", () => {
         applyTheme(
           localStorage.getItem("theme") ||
-            (prefersDarkScheme.matches ? "dark" : "light")
+            (prefersDarkScheme.matches ? "dark" : "light"),
         );
         setupThemeToggleListener();
       });

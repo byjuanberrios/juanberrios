@@ -27,14 +27,6 @@ const allPosts = await getPublishedPosts();
     </p>
   </section>
 
-  <!-- <Image
-    src="https://storage.juanberrios.com/new_back.webp"
-    alt="imagen"
-    loading="eager"
-    inferSize
-    class="w-full aspect-[16/12] md:aspect-video object-cover"
-  /> -->
-
   <!-- Mini Bio -->
   <section class="lateral-spacing grid gap-3 md:gap-0 md:flex my-14 md:my-20">
     <h2 class="font-semibold md:w-2/6">Sobre mi</h2>
@@ -53,43 +45,44 @@ const allPosts = await getPublishedPosts();
   </section>
 
   <!-- Últimos posts -->
-  <section class="lateral-spacing grid gap-3 md:gap-0 md:flex mt-14 md:mt-20">
+  <section class="lateral-spacing grid gap-5 md:gap-0 md:flex mt-14 md:mt-20">
     <h2 class="font-semibold md:w-2/6">Últimos posts</h2>
     <div class="w-full md:w-4/6">
-      <div class="grid gap-4 mb:gap-5 mb-5 md:mb-6">
+      <div class="grid gap-3.5 md:gap-5 mb-5 md:mb-6">
         {
           allPosts.map((post) => {
-            const date = post.date.slice(0, 10);
-            const postDate = parseDate(date);
-            const month = formatDateInChile(postDate, { month: "long" });
-            const day = formatDateInChile(postDate, { day: "numeric" });
+            const month = post.date.slice(5, 7);
+            const day = post.date.slice(8, 10);
             return (
               <a
+                class="w-full grid grid-cols-[auto_1fr_auto] gap-x-2 leading-snug opacity-100 hover:opacity-60 tracking-normal font-sans truncate"
                 href={`/posts/${post.slug}`}
-                class="items-center font-sans tracking-tight truncate w-full group"
               >
-                <p class="title text-zinc-900 dark:text-zinc-300 underline underline-offset-[0.2em] decoration-[0.05em] decoration-zinc-300 dark:decoration-zinc-500 group-hover:decoration-zinc-900 dark:group-hover:decoration-zinc-200 transition-all ease-out duration-200 overflow-hidden inline truncate">
+                <p class="title text-sm md:text-base text-zinc-900 dark:text-zinc-300 max-w-[30ch] lg:max-w-[35ch] overflow-hidden whitespace-nowrap">
                   {post.title}
                 </p>
-                <p class="date opacity-40 text-xs md:text-sm">
-                  {day} de <span class="capitalize">{month}</span> -{" "}
+                <hr class="h-px self-end border-b-1 dark:opacity-50 m-w-[1rem] mt-0 mb-[0.3rem] border-dashed w-full" />
+                <span class="opacity-50 text-end self-end text-xs md:text-sm">
+                  {month}/{day}
+                </span>
+                <span class="block opacity-50 mt-0.5">
                   {post.tags && (
-                    <span class="text-xs md:text-sm">
+                    <span class="text-sm md:text-base font-serif italic">
                       {post.tags.map((tag, i) => (
-                        <span>
+                        <span class="first:capitalize">
                           {i + 1 === post.tags.length ? tag : tag + ", "}
                         </span>
                       ))}
                     </span>
                   )}
-                </p>
+                </span>
               </a>
             );
           })
         }
       </div>
       <a
-        class="font-sans font-semibold tracking-tight page-link text-zinc-900 dark:text-zinc-300 underline underline-offset-[0.2em] decoration-[0.05em] decoration-zinc-400 dark:decoration-zinc-500 hover:decoration-zinc-900 dark:hover:decoration-zinc-200 transition-all ease-out duration-200 overflow-hidden inline truncate"
+        class="font-sans font-semibold tracking-normal page-link text-zinc-900 dark:text-zinc-300 underline underline-offset-[0.2em] decoration-[0.05em] decoration-zinc-400 dark:decoration-zinc-500 hover:decoration-zinc-900 dark:hover:decoration-zinc-200 transition-all ease-out duration-200 overflow-hidden inline truncate"
         href="/posts">Todos los posts</a
       >
     </div>
