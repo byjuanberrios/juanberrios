@@ -12,7 +12,7 @@ import type { SEOProps } from "../@types";
 import "@/styles/global.css";
 
 // Shared Components
-import Header from "../components/shared/Header/index.astro";
+import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer.astro";
 
 const { title, description, ogImage } = Astro.props as SEOProps;
@@ -102,7 +102,7 @@ const { title, description, ogImage } = Astro.props as SEOProps;
   <body
     class="bg-stone-100 dark:bg-neutral-900 text-zinc-900 dark:text-zinc-50"
   >
-    <Header />
+    <Header client:load />
     <slot />
     <Footer />
   </body>

@@ -23,6 +23,11 @@
       font-size: var(--text-base);
     }
   }
+  @media (min-width: 1024px) {
+    body {
+      font-size: var(--text-lg);
+    }
+  }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sans);
@@ -41,6 +46,12 @@
     }
   }
 
+  .header-lateral-spacing {
+    padding-inline: calc(var(--spacing) * 5);
+    margin-inline: auto;
+    max-width: calc(var(--container-2xl) + 20px);
+  }
+
   .lateral-spacing {
     padding-inline: calc(var(--spacing) * 7);
     margin-inline: auto;
@@ -54,8 +65,7 @@
     pre,
     figure {
         margin-block: calc(var(--spacing) * 5);
-        /* line-height: var(--leading-relaxed); */
-        line-height: 1.85;
+        line-height: 1.75;
     }
 
     a {
