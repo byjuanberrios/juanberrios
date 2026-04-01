@@ -3,18 +3,33 @@ import ToggleThemeButton from "./ToggleThemeButton";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="fixed w-full bottom-3 md:bottom-auto md:top-12 z-20">
-      <div className="w-full header-lateral-spacing flex justify-center items-center mx-auto xl:px-0 xl:max-w-7xl">
+    <header className="fixed w-full bottom-4 md:bottom-auto md:top-12 z-20">
+      <div className="w-full header-lateral-spacing flex justify-center items-center mx-auto">
         {/* <MenuDesktop /> */}
-        <div className="text-sm font-sans w-full rounded-3xl flex flex-wrap bg-stone-200/30 dark:bg-neutral-800/30 backdrop-blur-md px-4.5 py-2.5 border border-neutral-300/50 dark:border-stone-700/50">
+        <div className="text-sm font-sans w-full rounded-3xl flex flex-wrap bg-stone-200/30 dark:bg-neutral-800/30 backdrop-blur-md px-4.5 py-2.5 border border-neutral-300/70 dark:border-stone-700/70">
           <div className="flex justify-between w-full items-center order-2 md:order-1">
-            <div className="flex items-center">
+            <div className="flex items-center gap-4 pl-1">
               <button
                 className="font-medium h-5 cursor-pointer"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
-                {menuOpen ? "Cerrar Menú" : "Menú"}
+                {menuOpen ? (
+                  "Cerrar Menú"
+                ) : (
+                  <>
+                    <span className="flex items-center gap-1">
+                      <span className="grid grid-cols-2 w-3 h-3 items-center">
+                        <span className="block w-1 h-1 bg-neutral-800 dark:bg-stone-200"></span>
+                        <span className="block w-1 h-1 bg-neutral-800 dark:bg-stone-200"></span>
+                        <span className="block w-1 h-1 bg-neutral-800 dark:bg-stone-200"></span>
+                        <span className="block w-1 h-1 bg-neutral-800 dark:bg-stone-200"></span>
+                      </span>
+                      <span>Menú</span>
+                    </span>
+                  </>
+                )}
               </button>
             </div>
             <ToggleThemeButton />
