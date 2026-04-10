@@ -38,28 +38,14 @@ const year = formatDateInChile(postDate, { year: "numeric" });
 <Layout title={post.data.title}>
   <header class="lateral-spacing mt-32 md:mt-60 mb-14 md:mb-20 font-sans">
     <h1
-      class="text-3xl md:text-5xl font-display text-pretty leading-[130%] md:leading-tight pr-6"
+      class="text-[1.8rem] md:text-[2.8rem] font-display text-pretty leading-[135%] md:leading-[130%] pr-6 mb-4 md:mb-6"
     >
       {post.data.title}
     </h1>
-  </header>
-  <section class="lateral-spacing">
-    <div class="prose post">
-      <Content />
-    </div>
-  </section>
-  <section class="lateral-spacing">
-    <p>—</p>
-    <p
-      class="font-sans opacity-50 text-xs md:text-sm mt-4 md:mt-7 mb-0.5 leading-snug"
-    >
-      {day} de <span class="capitalize">{longMonth}</span> de
-      {year}
-      <br />
-    </p>
     {
       post.data.tags && (
         <p class="font-serif italic text-sm md:text-base opacity-50 leading-snug">
+          —{" "}
           {post.data.tags.map((tag, i) => (
             <span class={i === 0 ? "capitalize" : ""}>
               {i + 1 === post.data.tags.length ? tag : tag + ", "}
@@ -68,6 +54,21 @@ const year = formatDateInChile(postDate, { year: "numeric" });
         </p>
       )
     }
+  </header>
+  <section class="lateral-spacing">
+    <div class="prose post">
+      <Content />
+    </div>
+  </section>
+  <section class="lateral-spacing mt-12">
+    <p>—</p>
+    <p
+      class="font-sans opacity-50 text-xs md:text-sm mt-4 md:mt-7 leading-snug"
+    >
+      {day} de <span class="capitalize">{longMonth}</span> de
+      {year}
+      <br />
+    </p>
   </section>
 
   <!-- Next / Prev post navigation -->

@@ -3,14 +3,14 @@ import { getCollection } from "astro:content";
 export const parseDate = (dateString: string) => {
   const [year, month, day] = dateString.slice(0, 10).split("-");
   const utcDate = new Date(
-    Date.UTC(Number(year), Number(month) - 1, Number(day), 12, 0, 0)
+    Date.UTC(Number(year), Number(month) - 1, Number(day), 12, 0, 0),
   );
   return utcDate;
 };
 
 export const formatDateInChile = (
   date: Date,
-  options: Intl.DateTimeFormatOptions
+  options: Intl.DateTimeFormatOptions,
 ) => {
   return date.toLocaleString("es-CL", {
     ...options,
@@ -39,7 +39,7 @@ export const getPublishedPosts = async () => {
       tags: entry.data.tags,
     }))
     .sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime())
-    .slice(0, 5);
+    .slice(0, 4);
 
   return allPosts;
 };
@@ -89,7 +89,7 @@ export const getBookmarks = async () => {
     {} as Record<
       string,
       { title: string; tags: string[]; url: string; favicon: string }[]
-    >
+    >,
   );
   return allBookmarks;
 };

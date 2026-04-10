@@ -10,7 +10,7 @@ const allPosts = await getPublishedPosts();
 <Layout>
   <!-- Presentation -->
   <section
-    class="lateral-spacing mt-32 md:mt-60 mb-14 md:mb-18 grid gap-6 md:gap-0 md:flex items-start"
+    class="lateral-spacing mt-32 md:mt-60 mb-16 md:mb-18 grid gap-7 md:gap-0 md:flex items-start"
   >
     <div class="md:w-2/6">
       <Image
@@ -27,26 +27,9 @@ const allPosts = await getPublishedPosts();
     </p>
   </section>
 
-  <!-- Mini Bio -->
-  <section class="lateral-spacing grid gap-3 md:gap-0 md:flex my-14 md:my-20">
-    <h2 class="font-semibold md:w-2/6">Sobre mi</h2>
-    <div class="grid gap-4 md:w-4/6">
-      <p class="prose">
-        Soy un hombre <i>esencialmente cristiano</i>, diseñador y desarrollador
-        frontend autodidacta. Vivo en Curicó, una pequeña ciudad a dos horas al
-        sur de Santiago de Chile. Estoy casado y soy padre de una hermosa
-        pequeña.
-      </p>
-      <p class="prose">
-        Me gusta el té, una <i>rara</i> variedad musical, la rara estación entre la
-        primavera y el verano y la armonía entre la vida de región y la ciudad.
-      </p>
-    </div>
-  </section>
-
   <!-- Últimos posts -->
-  <section class="lateral-spacing grid gap-5 md:gap-0 md:flex mt-14 md:mt-20">
-    <h2 class="font-semibold md:w-2/6">Últimos posts</h2>
+  <section class="lateral-spacing grid gap-5 md:gap-0 md:flex mt-14 md:mt-22">
+    <h2 class="font-semibold md:w-2/6">Posts</h2>
     <div class="w-full md:w-4/6">
       <div class="grid gap-2.5 md:gap-3.5 mb-5 md:mb-6">
         {
@@ -55,10 +38,10 @@ const allPosts = await getPublishedPosts();
             const day = post.date.slice(8, 10);
             return (
               <a
-                class="w-full grid grid-cols-[auto_1fr_auto] gap-x-1.5 leading-snug opacity-100 hover:opacity-60 tracking-normal font-sans truncate"
+                class="w-full grid grid-cols-[auto_1fr_auto] gap-x-1.5 leading-snug opacity-80 hover:opacity-100 tracking-normal font-sans truncate"
                 href={`/posts/${post.slug}`}
               >
-                <p class="title text-sm md:text-base text-zinc-900 dark:text-zinc-300 max-w-[30ch] lg:max-w-[35ch] overflow-hidden whitespace-nowrap">
+                <p class="title text-sm md:text-base text-zinc-800 dark:text-white max-w-[30ch] lg:max-w-[35ch] overflow-hidden whitespace-nowrap">
                   {post.title}
                 </p>
                 <hr class="h-px self-end border-b-1 dark:opacity-50 m-w-[1rem] mt-0 mb-[0.3rem] border-dashed w-full" />
@@ -85,6 +68,23 @@ const allPosts = await getPublishedPosts();
         class="text-sm md:text-base font-sans font-semibold tracking-normal page-link text-zinc-900 dark:text-zinc-300 underline underline-offset-[0.2em] decoration-[0.05em] decoration-zinc-400 dark:decoration-zinc-500 hover:decoration-zinc-900 dark:hover:decoration-zinc-200 transition-all ease-out duration-200 overflow-hidden inline truncate"
         href="/posts">Todos los posts</a
       >
+    </div>
+  </section>
+
+  <!-- Mini Bio -->
+  <section class="lateral-spacing grid gap-3 md:gap-0 md:flex my-16 md:my-22">
+    <h2 class="font-semibold md:w-2/6">Sobre mi</h2>
+    <div class="grid gap-4 md:w-4/6">
+      <p class="prose">
+        Soy un hombre <i>esencialmente cristiano</i>, diseñador y desarrollador
+        frontend autodidacta. Vivo en Curicó, una pequeña ciudad a dos horas al
+        sur de Santiago de Chile. Estoy casado y soy padre de una hermosa
+        pequeña.
+      </p>
+      <p class="prose">
+        Me gusta el té, una <i>rara</i> variedad musical, la rara estación entre la
+        primavera y el verano y la armonía entre la vida de región y la ciudad.
+      </p>
     </div>
   </section>
 </Layout>

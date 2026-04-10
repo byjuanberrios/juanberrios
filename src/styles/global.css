@@ -58,6 +58,12 @@
     max-width: var(--container-2xl);
   }
 
+  @media (min-width: 768px) {
+    .lateral-spacing {
+      padding-inline: calc(var(--spacing) * 10);
+    }
+  }
+
   .post {
     p,
     ol,
