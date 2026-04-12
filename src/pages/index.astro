@@ -31,7 +31,7 @@ const allPosts = await getPublishedPosts();
   <section class="lateral-spacing grid gap-5 md:gap-0 md:flex mt-14 md:mt-22">
     <h2 class="font-semibold md:w-2/6">Posts</h2>
     <div class="w-full md:w-4/6">
-      <div class="grid gap-2.5 md:gap-3.5 mb-5 md:mb-6">
+      <div class="grid gap-3 md:gap-3.5 mb-5 md:mb-6">
         {
           allPosts.map((post) => {
             const month = post.date.slice(5, 7);
