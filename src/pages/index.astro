@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layout/Layout.astro";
-import { getPublishedPosts, parseDate, formatDateInChile } from "@/utils";
+import { getPublishedPosts } from "@/utils";
 import meImage from "@/assets/images/avatar_new.webp";
 
 const allPosts = await getPublishedPosts();
