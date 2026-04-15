@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="fixed w-full bottom-4 md:bottom-auto md:top-12 z-20">
       <div className="w-full header-lateral-spacing flex justify-center items-center mx-auto">
-        <div className="relative overflow-hidden text-sm font-sans w-full rounded-3xl flex flex-wrap bg-stone-300/50 dark:bg-zinc-900/20 backdrop-blur-md px-4.5 py-2.5 border border-neutral-300/30 dark:border-white/5">
+        <div className="relative overflow-hidden text-sm font-sans w-full rounded-3xl flex flex-wrap bg-stone-300/50 dark:bg-zinc-900/50 backdrop-blur-xs px-4.5 md:px-5 py-2.5 border border-neutral-400/20 dark:border-zinc-200/10">
           <div className="flex justify-between w-full items-center order-2 md:order-1">
             <div className="flex items-center gap-4">
               <button
@@ -40,27 +40,27 @@ const Header = () => {
           >
             <a
               href="/"
-              className="mt-1.5 md:mt-1.5 opacity-60 hover:opacity-100"
+              className="mt-1.5 md:mt-1.5 opacity-80 hover:opacity-100"
             >
               Inicio
             </a>
-            <a href="/posts" className="opacity-60 hover:opacity-100">
+            <a href="/posts" className="opacity-80 hover:opacity-100">
               Posts
             </a>
             <a
               href="https://juanberrios.dev"
-              className="opacity-60 hover:opacity-100"
+              className="opacity-80 hover:opacity-100"
               target="_blank"
               rel="noopener noreferrer"
             >
               Portafolio
             </a>
-            <a href="/playlists" className="opacity-60 hover:opacity-100">
+            <a href="/playlists" className="opacity-80 hover:opacity-100">
               Playlists
             </a>
             <a
               href="/bookmarks"
-              className="mb-3 md:mb-1 opacity-60 hover:opacity-100"
+              className="mb-3 md:mb-1 opacity-80 hover:opacity-100"
             >
               Marcadores
             </a>
