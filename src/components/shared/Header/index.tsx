@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="fixed w-full bottom-4 md:bottom-auto md:top-12 z-20">
       <div className="w-full header-lateral-spacing flex justify-center items-center mx-auto">
-        <div className="relative overflow-hidden text-sm font-sans w-full rounded-3xl flex flex-wrap bg-stone-300/50 dark:bg-zinc-900/50 backdrop-blur-xs px-4.5 md:px-5 py-2.5 border border-neutral-400/20 dark:border-zinc-200/10">
+        <div className="relative overflow-hidden text-sm font-sans w-full rounded-3xl flex flex-wrap bg-stone-300/50 dark:bg-zinc-900/50 backdrop-blur-xs px-4.5 md:px-5 py-2.5 border border-neutral-400/20 dark:border-zinc-200/10 after:-z-10 after:h-full after:top-0 after:left-0 after:absolute after:w-full after:bg-linear-to-tr after:from-stone-400/20 after:via-neutral-500/10 after:to-zinc-400/20 after:blur-3xl">
           <div className="flex justify-between w-full items-center order-2 md:order-1">
             <div className="flex items-center gap-4">
               <button
