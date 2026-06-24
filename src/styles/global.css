@@ -326,10 +326,6 @@
 }
 
 .message {
-  * {
-    margin: 0;
-    position: relative;
-  }
   &:before {
     content: "";
     position: absolute;
@@ -339,9 +335,22 @@
     background-size: cover;
     background-position: center;
     pointer-events: none;
-    background-image: linear-gradient( 109.6deg,  rgba(163,213,255,1) 11.3%, rgba(4,137,137,1) 86.7% );
-    opacity: 0.1;
+    background-image: linear-gradient(135deg, rgba(190,242,100,0.16) 0%, rgba(190,242,100,0.02) 100%);
+    opacity: 1;
   }
+}
+.dark .message:before {
+  background-image: linear-gradient(135deg, rgba(132,204,22,0.14) 0%, rgba(132,204,22,0.02) 100%);
+}
+.message-body :is(p, ol, ul, pre, figure) {
+  margin-block: 0;
+  line-height: 1.4;
+}
+.message-body a {
+  text-decoration-color: var(--color-lime-500);
+}
+.message-body a:hover {
+  text-decoration-color: var(--color-lime-600);
 }
 
 @theme inline {
