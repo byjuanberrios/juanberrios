@@ -36,16 +36,17 @@ const year = formatDateInChile(postDate, { year: "numeric" });
 ---
 
 <Layout title={post.data.title}>
-  <header class="lateral-spacing mt-42 md:mt-68 mb-14 md:mb-20 font-sans">
+  <header
+    class="lateral-spacing mt-42 md:mt-68 mb-18 md:mb-24 font-sans text-center"
+  >
     <h1
-      class="text-[1.8rem] md:text-[2.8rem] font-display text-pretty leading-[135%] md:leading-[130%] pr-6 mb-4 md:mb-6"
+      class="text-[1.8rem] md:text-[2.8rem] font-display text-pretty leading-[130%] md:leading-[125%] mb-4 md:mb-6 mx-auto max-w-[95%] md:max-w-[90%]"
     >
       {post.data.title}
     </h1>
     {
       post.data.tags && (
         <p class="font-serif italic text-sm md:text-base opacity-50 leading-snug">
-          —{" "}
           {post.data.tags.map((tag, i) => (
             <span class={i === 0 ? "capitalize" : ""}>
               {i + 1 === post.data.tags.length ? tag : tag + ", "}

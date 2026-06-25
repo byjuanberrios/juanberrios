@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-24T00:00:00Z",
+  "title": "Design System: Juan Berrios",
+  "extensions": {
+    "colorMeta": {
+      "warm-stone-paper": {
+        "role": "neutral",
+        "displayName": "Warm Stone Paper",
+        "canonical": "oklch(0.870 0.002 74)",
+        "tonalRamp": [
+          "oklch(0.18 0.002 74)",
+          "oklch(0.28 0.002 74)",
+          "oklch(0.38 0.002 74)",
+          "oklch(0.48 0.002 74)",
+          "oklch(0.58 0.002 74)",
+          "oklch(0.68 0.002 74)",
+          "oklch(0.78 0.002 74)",
+          "oklch(0.87 0.002 74)"
+        ]
+      },
+      "quiet-ink": {
+        "role": "neutral",
+        "displayName": "Quiet Ink",
+        "canonical": "oklch(0.141 0.005 286)",
+        "tonalRamp": [
+          "oklch(0.14 0.005 286)",
+          "oklch(0.22 0.005 286)",
+          "oklch(0.30 0.005 286)",
+          "oklch(0.40 0.005 286)",
+          "oklch(0.50 0.005 286)",
+          "oklch(0.62 0.005 286)",
+          "oklch(0.74 0.005 286)",
+          "oklch(0.86 0.005 286)"
+        ]
+      },
+      "ink-body": {
+        "role": "neutral",
+        "displayName": "Ink Body",
+        "canonical": "oklch(0.274 0.006 286)",
+        "tonalRamp": [
+          "oklch(0.14 0.006 286)",
+          "oklch(0.22 0.006 286)",
+          "oklch(0.27 0.006 286)",
+          "oklch(0.38 0.006 286)",
+          "oklch(0.48 0.006 286)",
+          "oklch(0.60 0.006 286)",
+          "oklch(0.74 0.006 286)",
+          "oklch(0.87 0.006 286)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "oklch(0.871 0.006 286)",
+        "tonalRamp": [
+          "oklch(0.14 0.006 286)",
+          "oklch(0.26 0.006 286)",
+          "oklch(0.38 0.006 286)",
+          "oklch(0.50 0.006 286)",
+          "oklch(0.62 0.006 286)",
+          "oklch(0.74 0.006 286)",
+          "oklch(0.80 0.006 286)",
+          "oklch(0.87 0.006 286)"
+        ]
+      },
+      "garden-lime": {
+        "role": "primary",
+        "displayName": "Garden Lime",
+        "canonical": "oklch(0.839 0.179 122)",
+        "tonalRamp": [
+          "oklch(0.20 0.06 122)",
+          "oklch(0.30 0.09 122)",
+          "oklch(0.40 0.12 122)",
+          "oklch(0.47 0.145 122)",
+          "oklch(0.58 0.16 122)",
+          "oklch(0.70 0.175 122)",
+          "oklch(0.77 0.188 122)",
+          "oklch(0.84 0.179 122)"
+        ]
+      },
+      "garden-lime-deep": {
+        "role": "primary",
+        "displayName": "Garden Lime Deep",
+        "canonical": "oklch(0.768 0.188 122)",
+        "tonalRamp": [
+          "oklch(0.20 0.06 122)",
+          "oklch(0.30 0.09 122)",
+          "oklch(0.40 0.12 122)",
+          "oklch(0.47 0.145 122)",
+          "oklch(0.58 0.16 122)",
+          "oklch(0.70 0.175 122)",
+          "oklch(0.77 0.188 122)",
+          "oklch(0.84 0.179 122)"
+        ]
+      },
+      "garden-lime-dark": {
+        "role": "primary",
+        "displayName": "Garden Lime Dark",
+        "canonical": "oklch(0.466 0.145 122)",
+        "tonalRamp": [
+          "oklch(0.20 0.06 122)",
+          "oklch(0.30 0.09 122)",
+          "oklch(0.40 0.12 122)",
+          "oklch(0.47 0.145 122)",
+          "oklch(0.58 0.16 122)",
+          "oklch(0.70 0.175 122)",
+          "oklch(0.77 0.188 122)",
+          "oklch(0.84 0.179 122)"
+        ]
+      },
+      "header-stone": {
+        "role": "neutral",
+        "displayName": "Header Stone",
+        "canonical": "oklch(0.823 0.003 74)",
+        "tonalRamp": [
+          "oklch(0.16 0.003 74)",
+          "oklch(0.26 0.003 74)",
+          "oklch(0.36 0.003 74)",
+          "oklch(0.46 0.003 74)",
+          "oklch(0.56 0.003 74)",
+          "oklch(0.66 0.003 74)",
+          "oklch(0.74 0.003 74)",
+          "oklch(0.82 0.003 74)"
+        ]
+      },
+      "header-zinc": {
+        "role": "neutral",
+        "displayName": "Header Zinc",
+        "canonical": "oklch(0.210 0.006 286)",
+        "tonalRamp": [
+          "oklch(0.14 0.006 286)",
+          "oklch(0.21 0.006 286)",
+          "oklch(0.28 0.006 286)",
+          "oklch(0.38 0.006 286)",
+          "oklch(0.48 0.006 286)",
+          "oklch(0.60 0.006 286)",
+          "oklch(0.74 0.006 286)",
+          "oklch(0.86 0.006 286)"
+        ]
+      },
+      "underline-faint": {
+        "role": "neutral",
+        "displayName": "Underline Faint",
+        "canonical": "oklch(0.705 0.009 286)",
+        "tonalRamp": [
+          "oklch(0.14 0.009 286)",
+          "oklch(0.24 0.009 286)",
+          "oklch(0.34 0.009 286)",
+          "oklch(0.44 0.009 286)",
+          "oklch(0.55 0.009 286)",
+          "oklch(0.66 0.009 286)",
+          "oklch(0.70 0.009 286)",
+          "oklch(0.87 0.009 286)"
+        ]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "canonical": "oklch(0.922 0.004 286)",
+        "tonalRamp": [
+          "oklch(0.14 0.004 286)",
+          "oklch(0.24 0.004 286)",
+          "oklch(0.36 0.004 286)",
+          "oklch(0.48 0.004 286)",
+          "oklch(0.60 0.004 286)",
+          "oklch(0.72 0.004 286)",
+          "oklch(0.82 0.004 286)",
+          "oklch(0.92 0.004 286)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page titles and post titles. The largest type on the site; never larger than 3rem."
+      },
+      "sans": {
+        "displayName": "Sans / UI",
+        "purpose": "Navigation, labels, dates, tags, UI. The wayfinding layer."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All prose. Newsreader, capped at 68ch. The reading unit."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Small UI text: dates, tags, next/prev labels, footer."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-quick",
+        "value": "ease-out 0.2s",
+        "purpose": "Default for link underline color transitions and opacity hover states."
+      },
+      {
+        "name": "ease-in-out-menu",
+        "value": "ease-in-out 0.3s",
+        "purpose": "Header menu max-height toggle."
+      },
+      {
+        "name": "page-transition",
+        "value": "astro:transitions ClientRouter fade",
+        "purpose": "View transitions between pages."
+      }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "0px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Post List Item",
+      "kind": "custom",
+      "refersTo": "post-list-item",
+      "description": "The dashed-leader row: title, flexible dashed leader, date — with serif-italic tags on a second line. The site's signature component.",
+      "html": "<a class=\"ds-post-row\" href=\"#\"><p class=\"ds-post-title\">On reading slowly</p><hr class=\"ds-post-leader\" /><span class=\"ds-post-date\">24/06</span><span class=\"ds-post-tags\"><em>reading, notes</em></span></a>",
+      "css": ".ds-post-row { display: grid; grid-template-columns: auto 1fr auto; column-gap: 6px; align-items: center; line-height: 1.375; font-family: var(--font-geist), system-ui, sans-serif; color: oklch(0.274 0.006 286); text-decoration: none; opacity: 0.8; transition: opacity 0.2s ease-out; } .ds-post-row:hover { opacity: 1; } .ds-post-title { font-size: 0.875rem; max-width: 30ch; overflow: hidden; white-space: nowrap; margin: 0; } .ds-post-leader { border: none; border-bottom: 1px dashed oklch(0.922 0.004 286); height: 1px; width: 100%; align-self: end; margin: 0 0 0.3rem 0; } .ds-post-date { font-size: 0.75rem; opacity: 0.5; text-align: end; align-self: end; } .ds-post-tags { display: block; opacity: 0.5; font-size: 0.875rem; font-family: var(--font-newsreader), Georgia, serif; font-style: italic; grid-column: 1 / -1; }"
+    },
+    {
+      "name": "In-prose Link",
+      "kind": "custom",
+      "refersTo": "in-prose-link",
+      "description": "Underlined link inside prose. Thin underline that deepens on hover. Never a background fill or pill.",
+      "html": "<p class=\"ds-prose\">This is a sentence with an <a class=\"ds-link\" href=\"#\">in-prose link</a> inside it.</p>",
+      "css": ".ds-prose { font-family: var(--font-newsreader), Georgia, serif; font-size: 1rem; line-height: 1.75; color: oklch(0.274 0.006 286); max-width: 68ch; } .ds-link { color: inherit; text-decoration: underline; text-underline-offset: 0.2rem; text-decoration-thickness: 0.05em; text-decoration-color: oklch(0.705 0.009 286); transition: text-decoration-color 0.2s ease-out; } .ds-link:hover { text-decoration-color: oklch(0.274 0.006 286); }"
+    },
+    {
+      "name": "Header (floating nav pill)",
+      "kind": "nav",
+      "refersTo": "header-pill",
+      "description": "Fixed floating pill at bottom on mobile / top on desktop. Backdrop-blur, soft gradient ambient lift. Menu toggle + theme toggle inside.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-header-pill\"><button class=\"ds-menu-btn\"><span class=\"ds-menu-dots\"><span></span><span></span><span></span><span></span></span>Menú</button><nav class=\"ds-menu\"><a href=\"/\">Inicio</a><a href=\"/posts\">Posts</a><a href=\"/playlists\">Playlists</a><a href=\"/bookmarks\">Marcadores</a></nav><button class=\"ds-theme-btn\" aria-label=\"dark\">☾</button></div></header>",
+      "css": ".ds-header { position: fixed; bottom: 16px; left: 0; right: 0; z-index: 20; display: flex; justify-content: center; } .ds-header-pill { width: 100%; max-width: 672px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 24px; background-color: oklch(0.823 0.003 74 / 0.5); backdrop-filter: blur(4px); border: 1px solid oklch(0.588 0.004 74 / 0.2); font-family: var(--font-geist), system-ui, sans-serif; font-size: 0.875rem; color: oklch(0.274 0.006 286); position: relative; overflow: hidden; } .ds-header-pill::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top right, oklch(0.588 0.004 74 / 0.2), oklch(0.460 0.003 74 / 0.1), oklch(0.588 0.006 286 / 0.2)); filter: blur(24px); } .ds-menu-btn { background: none; border: none; cursor: pointer; font: inherit; font-weight: 500; display: flex; align-items: center; gap: 4px; color: inherit; } .ds-menu-dots { display: grid; grid-template-columns: 1fr 1fr; width: 12px; height: 12px; gap: 1px; } .ds-menu-dots span { width: 5px; height: 5px; background: oklch(0.274 0.006 286); display: block; } .ds-menu { display: grid; gap: 6px; width: 100%; order: 1; } .ds-menu a { color: inherit; text-decoration: none; opacity: 0.8; transition: opacity 0.2s ease-out; } .ds-menu a:hover { opacity: 1; } .ds-theme-btn { background: none; border: none; cursor: pointer; color: inherit; font-size: 1rem; } @media (min-width: 768px) { .ds-header { bottom: auto; top: 48px; } .ds-menu { order: 2; display: flex; flex-direction: row; gap: 16px; width: auto; } }"
+    },
+    {
+      "name": "Blockquote",
+      "kind": "custom",
+      "refersTo": "blockquote",
+      "description": "A 1px lime left stripe with indented body. The only place Garden Lime appears as a border. Stripe is exactly 1px — never wider.",
+      "html": "<blockquote class=\"ds-quote\"><p>A sentence worth pulling out of the prose.</p></blockquote>",
+      "css": ".ds-quote { border-left: 1px solid oklch(0.839 0.179 122); padding-left: 16px; margin: 32px 0; font-family: var(--font-newsreader), Georgia, serif; color: oklch(0.274 0.006 286); } .ds-quote p { margin: 0; line-height: 1.625; }"
+    },
+    {
+      "name": "Message (callout)",
+      "kind": "card",
+      "refersTo": "message",
+      "description": "Lime-tinted callout for personal notes. A 16%-opacity gradient tint via ::before — never a solid lime fill. Links inside use lime-500 underline.",
+      "html": "<div class=\"ds-message\"><div class=\"ds-message-tint\"></div><div class=\"ds-message-body\"><p>Mejorando <em>Linkeee</em>. Si tienes sugerencias, dime.</p></div></div>",
+      "css": ".ds-message { position: relative; border-radius: 10px; overflow: hidden; padding: 16px 20px; background-color: oklch(0.870 0.002 74); } .ds-message-tint { position: absolute; inset: 0; z-index: 0; pointer-events: none; background-image: linear-gradient(135deg, oklch(0.839 0.179 122 / 0.16) 0%, oklch(0.839 0.179 122 / 0.02) 100%); } .ds-message-body { position: relative; z-index: 1; font-family: var(--font-newsreader), Georgia, serif; font-size: 1rem; line-height: 1.4; color: oklch(0.274 0.006 286); } .ds-message-body p { margin: 0; } .ds-message-body a { color: inherit; text-decoration: underline; text-decoration-color: oklch(0.768 0.188 122); } .ds-message-body a:hover { text-decoration-color: oklch(0.665 0.193 122); }"
+    },
+    {
+      "name": "Featured Music (playlist card)",
+      "kind": "card",
+      "refersTo": "featured-music",
+      "description": "Album art + release metadata + streaming links. Small variant for annual playlists. Square cover, rounded image.",
+      "html": "<div class=\"ds-music\"><img class=\"ds-music-art\" src=\"https://placehold.co/400x400\" alt=\"2026 cover\" /><div class=\"ds-music-meta\"><p class=\"ds-music-artist\">Juan Berrios</p><p class=\"ds-music-release\">2026</p><div class=\"ds-music-links\"><a href=\"#\" target=\"_blank\" rel=\"noopener noreferrer\">Spotify</a><a href=\"#\" target=\"_blank\" rel=\"noopener noreferrer\">Apple Music</a></div></div></div>",
+      "css": ".ds-music { display: flex; gap: 16px; align-items: flex-start; padding: 12px 0; } .ds-music-art { width: 88px; height: 88px; border-radius: 10px; object-fit: cover; } .ds-music-meta { display: grid; gap: 4px; font-family: var(--font-geist), system-ui, sans-serif; } .ds-music-artist { margin: 0; font-size: 0.875rem; font-weight: 600; color: oklch(0.274 0.006 286); } .ds-music-release { margin: 0; font-size: 0.75rem; opacity: 0.5; } .ds-music-links { display: flex; gap: 12px; margin-top: 6px; } .ds-music-links a { font-size: 0.875rem; color: oklch(0.274 0.006 286); text-decoration: underline; text-underline-offset: 0.2rem; text-decoration-thickness: 0.05em; text-decoration-color: oklch(0.705 0.009 286); transition: text-decoration-color 0.2s ease-out; } .ds-music-links a:hover { text-decoration-color: oklch(0.274 0.006 286); }"
+    },
+    {
+      "name": "Prose Container",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The reading unit: 68ch max-width, Newsreader, 1.75 leading. Headings switch to Inter Tight with 0.02em tracking.",
+      "html": "<article class=\"ds-post\"><h2>On reading slowly</h2><p>The post column is the reading unit, not the page width. This container is capped at 68 characters and uses a transitional serif at 1.75 line-height for sustained reading.</p></article>",
+      "css": ".ds-post { max-width: 68ch; font-family: var(--font-newsreader), Georgia, serif; font-size: 1rem; line-height: 1.75; color: oklch(0.274 0.006 286); } .ds-post p { margin-block: 20px; } .ds-post h2 { font-family: var(--font-interdisplay), system-ui, sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.02em; line-height: 1.45; margin-top: 44px; margin-bottom: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Editorial Sanctuary",
+    "overview": "This is a hand-bound literary journal on the web — calm, considered, editorial. The prose is the point; everything else gets out of its way. The system pairs a reading-first serif (Newsreader) with a tight grotesque display (Inter Tight) and a quiet geometric sans for navigation (Geist), so the eye always knows whether it's reading, orienting, or navigating. Whitespace is the primary material, not a leftover.\n\nThe site explicitly rejects SaaS landing-page tropes — no hero-metric stat blocks, no gradient accents, no saturated banner sections, no identical icon-card grids. It rejects brutalist / maximalist type — no oversized display that sacrifices readability for impact, no type experiments that turn the page into noise. And it refuses the warm beige / cream / sand default: the light surface is a warm stone neutral (#E7E5E4), clearly stone, not paper-pulp. Warmth is carried by the writing, the type pairing, and one small green accent — never by a tinted near-white body.",
+    "keyCharacteristics": [
+      "Reading-first: 68ch measure, 1.75 leading, serif body, contrast tuned for long sessions.",
+      "One voice: a single lime accent on ≤5% of any screen. Its rarity is the point.",
+      "Flat by default: no box-shadows on content; depth comes from opacity, tonal layering, and one ambient blur on the floating header.",
+      "Underline, don't button-ify: links use a thin underline that deepens on hover; never colored backgrounds or pill buttons for in-prose links.",
+      "Hand-crafted details: dashed-leader post lists, lime blockquote stripe, a floating blurred nav pill."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "The Garden Lime accent appears on ≤5% of any screen — the blockquote stripe, the Message tint, and that's it. Its rarity is the point. If you reach for it anywhere else, stop.", "section": "colors" },
+      { "name": "The No-Beige Rule", "body": "The light body is Warm Stone Paper (stone-200), not cream, sand, paper, parchment, or any near-white warm-tinted neutral in the OKLCH L 0.84–0.97 / C < 0.06 / hue 40–100 band. Warmth lives in the type and the voice, not the background.", "section": "colors" },
+      { "name": "The 68-Character Rule", "body": "The `.post` container is `max-width: 68ch`. The post column is the reading unit, not the page width. Never widen it; never let prose flow full-bleed.", "section": "typography" },
+      { "name": "The Underline Rule", "body": "In-prose links use a thin underline that deepens from Underline Faint to Ink Body on hover. Never use colored backgrounds, pill buttons, or gradient text for in-prose links.", "section": "typography" },
+      { "name": "The Opacity-Honest Rule", "body": "Opacity is not a contrast strategy. Muted text still needs ≥4.5:1 against its background. If opacity-40 or opacity-50 fails the contrast check, darken the ink instead.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. No box-shadow on cards, buttons, inputs, or prose containers. The header's backdrop-blur is the one ambient exception; everything else uses tonal layering and opacity for depth.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do cap prose measure at 68ch (.post { max-width: 68ch }). The post column is the reading unit.",
+      "Do use the three-family system as intended: Newsreader for reading, Inter Tight for titles, Geist for navigation/labels. Don't blur the roles.",
+      "Do keep body text contrast ≥4.5:1. Ink Body (zinc-800) on Warm Stone Paper (stone-200) passes; dark-mode Ink Soft (zinc-200) on Quiet Ink (zinc-950) passes. When in doubt, darken the ink.",
+      "Do use text-wrap: balance on h1–h3 and text-wrap: pretty on long prose to reduce orphans.",
+      "Do honor prefers-reduced-motion: every transition needs a crossfade or instant fallback.",
+      "Do keep the header's backdrop-blur as the single ambient lift. It earns its place by floating over scrolling content."
+    ],
+    "donts": [
+      "Don't use the Garden Lime accent on more than 5% of any screen. Per The One Voice Rule, it's the blockquote stripe and the Message tint — nothing else.",
+      "Don't use SaaS landing-page tropes: hero-metric stat blocks, gradient accents, saturated banner sections, identical icon-card grids.",
+      "Don't use brutalist / maximalist type: oversized display that sacrifices readability for impact, type experiments that turn the page into noise.",
+      "Don't use a warm beige / cream / sand / paper / parchment body background. The No-Beige Rule: the light body is Warm Stone Paper (stone-200).",
+      "Don't use border-left or border-right greater than 1px as a colored accent stripe. The blockquote stripe is exactly 1px.",
+      "Don't use background-clip: text with a gradient (gradient text). Emphasis comes from weight or size, never a gradient fill.",
+      "Don't use box-shadows on cards, buttons, or inputs. The Flat-By-Default Rule: tonal layering and opacity carry depth.",
+      "Don't pair border: 1px solid X with a wide soft box-shadow (M ≥ 16px blur) on the same element. Pick one or none.",
+      "Don't round cards / sections / inputs beyond 10px. The header pill at 24px is the one exception.",
+      "Don't put a tiny uppercase tracked eyebrow above every section.",
+      "Don't use opacity-40 or opacity-50 on body text as a contrast strategy. Per The Opacity-Honest Rule, darken the ink instead."
+    ]
+  }
+}

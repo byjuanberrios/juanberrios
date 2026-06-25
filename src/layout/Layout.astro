@@ -45,7 +45,11 @@ const { title, description, ogImage } = Astro.props as SEOProps;
         localStorage.setItem("theme", theme);
         const themeToggleButton = document.querySelector(".theme-btn");
         if (themeToggleButton) {
-          themeToggleButton.setAttribute("aria-label", theme);
+          const next = theme === "dark" ? "claro" : "oscuro";
+          themeToggleButton.setAttribute(
+            "aria-label",
+            `Cambiar a tema ${next}`,
+          );
         }
       };
 

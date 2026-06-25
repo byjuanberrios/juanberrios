@@ -13,6 +13,8 @@ const Header = () => {
               <button
                 className="font-medium h-5 cursor-pointer"
                 onClick={() => setMenuOpen(!menuOpen)}
+                aria-expanded={menuOpen}
+                aria-controls="menu"
               >
                 {menuOpen ? (
                   "Cerrar Menú"
@@ -36,31 +38,39 @@ const Header = () => {
 
           <div
             id="menu"
+            role="navigation"
+            aria-label="Navegación principal"
             className={`w-full overflow-hidden ${menuOpen ? "max-h-screen" : "max-h-0"} order-1 md:order-2 transition-all ease-in-out duration-300 grid gap-1.5 md:gap-1`}
           >
             <a
               href="/"
-              className="mt-1.5 md:mt-1.5 opacity-80 hover:opacity-100"
+              className="mt-1.5 md:mt-1.5 opacity-80 hover:opacity-100 flex items-center"
             >
               Inicio
             </a>
-            <a href="/posts" className="opacity-80 hover:opacity-100">
+            <a
+              href="/posts"
+              className="opacity-80 hover:opacity-100 flex items-center"
+            >
               Posts
             </a>
             <a
               href="https://juanberrios.dev"
-              className="opacity-80 hover:opacity-100"
+              className="opacity-80 hover:opacity-100 flex items-center"
               target="_blank"
               rel="noopener noreferrer"
             >
               Portafolio
             </a>
-            <a href="/playlists" className="opacity-80 hover:opacity-100">
+            <a
+              href="/playlists"
+              className="opacity-80 hover:opacity-100 flex items-center"
+            >
               Playlists
             </a>
             <a
               href="/bookmarks"
-              className="mb-3 md:mb-1 opacity-80 hover:opacity-100"
+              className="mb-3 md:mb-1 opacity-80 hover:opacity-100 flex items-center"
             >
               Marcadores
             </a>

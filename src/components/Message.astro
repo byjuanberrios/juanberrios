@@ -4,12 +4,14 @@ const { title } = Astro.props;
 
 <div
   role="note"
-  class="message font-sans relative py-5 px-5 rounded-lg mt-7 mb-8 z-[2] bg-stone-200 dark:bg-zinc-800 border-l-2 border-lime-400 dark:border-lime-700 overflow-hidden"
+  class="message font-sans relative py-5 px-5 rounded-lg mt-7 mb-8 bg-stone-200 dark:bg-zinc-800 overflow-hidden"
 >
   <p class="font-semibold mt-0 mb-2 text-sm relative z-[1]">
     {title || "Nota"}
   </p>
-  <div class="message-body opacity-80 text-sm relative z-[1]">
+  <div
+    class="message-body text-sm text-zinc-700 dark:text-zinc-400 relative z-[1]"
+  >
     <slot />
   </div>
 </div>
