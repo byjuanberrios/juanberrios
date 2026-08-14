@@ -107,7 +107,9 @@ const { title, description, ogImage } = Astro.props as SEOProps;
     class="bg-stone-200 dark:bg-zinc-950/90 text-zinc-800 dark:text-zinc-200"
   >
     <Header client:load />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

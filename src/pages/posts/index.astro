@@ -16,12 +16,12 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
     class="lateral-spacing mt-42 md:mt-68 mb-14 md:mb-18 flex justify-between items-end"
   >
     <div>
-      <p class="text-sm md:text-base mb-2.5 md:mb-4 opacity-50 font-sans">
+      <p class="text-sm md:text-base mb-2.5 md:mb-4 opacity-70 font-sans">
         Archivo
       </p>
       <h1 class="text-3xl md:text-5xl font-display">Todos los posts</h1>
     </div>
-    <span class="text-xs md:text-sm opacity-50 font-sans">
+    <span class="text-xs md:text-sm opacity-70 font-sans">
       (<span class="italic">{allPostsLength}</span> posts)
     </span>
   </header>
@@ -50,10 +50,10 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
                           {post.title}
                         </p>
                         <hr class="h-px self-end border-b-1 dark:opacity-50 m-w-[1rem] mt-0 mb-[0.3rem] border-dashed w-full" />
-                        <span class="opacity-50 text-end self-end text-xs md:text-sm">
+                        <span class="opacity-70 text-end self-end text-xs md:text-sm">
                           {day}/{month}
                         </span>
-                        <span class="block opacity-50">
+                        <span class="block opacity-70">
                           {post.tags && (
                             <span class="text-sm md:text-base font-serif italic">
                               {post.tags.map((tag, i) => (
