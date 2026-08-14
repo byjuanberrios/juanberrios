@@ -11,7 +11,7 @@ const Header = () => {
           <div className="flex justify-between w-full items-center order-2 md:order-1">
             <div className="flex items-center gap-4">
               <button
-                className="font-medium h-5 cursor-pointer"
+                className="relative font-medium h-5 cursor-pointer before:content-[''] before:absolute before:-inset-x-1 before:-inset-y-3"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-expanded={menuOpen}
                 aria-controls="menu"
@@ -53,14 +53,6 @@ const Header = () => {
               className="opacity-80 hover:opacity-100 flex items-center"
             >
               Posts
-            </a>
-            <a
-              href="https://juanberrios.dev"
-              className="opacity-80 hover:opacity-100 flex items-center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Portafolio
             </a>
             <a
               href="/playlists"

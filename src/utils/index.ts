@@ -71,6 +71,25 @@ export const getPublishedPostsByYear = async () => {
   return allPostsByYear;
 };
 
+const HTML_ENTITIES: Record<string, string> = {
+  "&mdash;": "—",
+  "&ndash;": "–",
+  "&hellip;": "…",
+  "&nbsp;": " ",
+  "&quot;": '"',
+  "&#39;": "'",
+  "&apos;": "'",
+  "&amp;": "&",
+  "&lt;": "<",
+  "&gt;": ">",
+};
+
+const decodeHtmlEntities = (text: string) =>
+  text.replace(
+    /&[a-z#0-9]+;/gi,
+    (entity) => HTML_ENTITIES[entity.toLowerCase()] ?? entity,
+  );
+
 export const getBookmarks = async () => {
   const allBookmarks = (await getCollection("bookmarks")).reduce(
     (acc, bookmark) => {
@@ -78,8 +97,10 @@ export const getBookmarks = async () => {
         acc[bookmark.data.category] = [];
       }
 
+      const rawTitle = bookmark.data.title || bookmark.data.url;
+
       acc[bookmark.data.category].push({
-        title: bookmark.data.title || bookmark.data.url,
+        title: decodeHtmlEntities(rawTitle).trim(),
         tags: bookmark.data.tags,
         url: bookmark.data.url,
         favicon: bookmark.data.favicon,

@@ -41,7 +41,7 @@ const allPosts = await getPublishedPosts();
                 class="w-full grid grid-cols-[auto_1fr_auto] gap-x-1.5 leading-snug opacity-80 hover:opacity-100 tracking-normal font-sans truncate"
                 href={`/posts/${post.slug}`}
               >
-                <p class="title text-sm md:text-base text-zinc-800 dark:text-white max-w-[30ch] lg:max-w-[35ch] overflow-hidden whitespace-nowrap">
+                <p class="title text-sm md:text-base text-zinc-800 dark:text-white max-w-[30ch] lg:max-w-[35ch] truncate">
                   {post.title}
                 </p>
                 <hr class="h-px self-end border-b-1 dark:opacity-50 m-w-[1rem] mt-0 mb-[0.3rem] border-dashed w-full" />

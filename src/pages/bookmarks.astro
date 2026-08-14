@@ -67,15 +67,17 @@ const categories = [
                     >
                       {bookmark.title}
                     </a>
-                    <p class="mt-0.5 mb-0 font-sans text-zinc-700 dark:text-zinc-400 text-xs md:text-sm">
-                      {bookmark.tags.map((tag, i) => (
-                        <span
-                          class={`text-xs md:text-sm ${i === 0 ? "capitalize" : ""}`}
-                        >
-                          {i + 1 === bookmark.tags.length ? tag : tag + ", "}
-                        </span>
-                      ))}
-                    </p>
+                    {bookmark.tags?.length > 0 && (
+                      <p class="mt-0.5 mb-0 font-sans text-zinc-700 dark:text-zinc-400 text-xs md:text-sm">
+                        {bookmark.tags.map((tag, i) => (
+                          <span
+                            class={`text-xs md:text-sm ${i === 0 ? "capitalize" : ""}`}
+                          >
+                            {i + 1 === bookmark.tags.length ? tag : tag + ", "}
+                          </span>
+                        ))}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}

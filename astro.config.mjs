@@ -2,7 +2,6 @@
 import { defineConfig, fontProviders } from "astro/config";
 
 import react from "@astrojs/react";
-import cloudflare from "@astrojs/cloudflare";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
@@ -16,17 +15,8 @@ export default defineConfig({
       iconDir: "src/assets/icons",
     }),
   ],
-  adapter: cloudflare(),
   vite: {
     plugins: [tailwindcss()],
-    resolve: {
-      alias:
-        process.env.NODE_ENV === "production"
-          ? {
-              "react-dom/server": "react-dom/server.edge",
-            }
-          : undefined,
-    },
   },
   redirects: {
     "/about": "/",

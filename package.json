@@ -9,11 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.0",
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
     "@nanostores/react": "^1.0.0",
-    "@radix-ui/react-dialog": "^1.1.14",
     "@tailwindcss/vite": "^4.1.10",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
