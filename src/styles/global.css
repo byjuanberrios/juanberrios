@@ -97,6 +97,24 @@
         line-height: 1.75;
     }
 
+    p:has(> img:only-child) {
+      margin-block: calc(var(--spacing) * 12);
+      margin-inline: calc(var(--spacing) * -4);
+
+      img {
+        display: block;
+        border-radius: 8px;
+      }
+
+      &:has(+ p > img:only-child) {
+        margin-bottom: calc(var(--spacing) * 2);
+      }
+
+      & + p:has(> img:only-child) {
+        margin-top: calc(var(--spacing) * 2);
+      }
+    }
+
     a {
       text-decoration: underline;
       text-decoration-color: var(--color-zinc-400);
