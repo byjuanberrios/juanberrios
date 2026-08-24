@@ -3,7 +3,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --font-display: var(--font-interdisplay), sans-serif;
     --font-sans: var(--font-geist), sans-serif;
     --font-serif: var(--font-newsreader), serif;
     --tracking-wide: -0.001em;
@@ -133,7 +132,6 @@
   }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-display);
       letter-spacing: var(--tracking-wide);
       font-weight: var(--font-weight-medium);
     }

@@ -265,14 +265,14 @@
       "name": "Prose Container",
       "kind": "custom",
       "refersTo": null,
-      "description": "The reading unit: 68ch max-width, Newsreader, 1.75 leading. Headings switch to Inter Tight with 0.02em tracking.",
+      "description": "The reading unit: 68ch max-width, Newsreader, 1.75 leading. Headings switch to Geist with 0.02em tracking.",
       "html": "<article class=\"ds-post\"><h2>On reading slowly</h2><p>The post column is the reading unit, not the page width. This container is capped at 68 characters and uses a transitional serif at 1.75 line-height for sustained reading.</p></article>",
-      "css": ".ds-post { max-width: 68ch; font-family: var(--font-newsreader), Georgia, serif; font-size: 1rem; line-height: 1.75; color: oklch(0.274 0.006 286); } .ds-post p { margin-block: 20px; } .ds-post h2 { font-family: var(--font-interdisplay), system-ui, sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.02em; line-height: 1.45; margin-top: 44px; margin-bottom: 4px; }"
+      "css": ".ds-post { max-width: 68ch; font-family: var(--font-newsreader), Georgia, serif; font-size: 1rem; line-height: 1.75; color: oklch(0.274 0.006 286); } .ds-post p { margin-block: 20px; } .ds-post h2 { font-family: var(--font-geist), system-ui, sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.02em; line-height: 1.45; margin-top: 44px; margin-bottom: 4px; }"
     }
   ],
   "narrative": {
     "northStar": "The Editorial Sanctuary",
-    "overview": "This is a hand-bound literary journal on the web — calm, considered, editorial. The prose is the point; everything else gets out of its way. The system pairs a reading-first serif (Newsreader) with a tight grotesque display (Inter Tight) and a quiet geometric sans for navigation (Geist), so the eye always knows whether it's reading, orienting, or navigating. Whitespace is the primary material, not a leftover.\n\nThe site explicitly rejects SaaS landing-page tropes — no hero-metric stat blocks, no gradient accents, no saturated banner sections, no identical icon-card grids. It rejects brutalist / maximalist type — no oversized display that sacrifices readability for impact, no type experiments that turn the page into noise. And it refuses the warm beige / cream / sand default: the light surface is a warm stone neutral (#E7E5E4), clearly stone, not paper-pulp. Warmth is carried by the writing, the type pairing, and one small green accent — never by a tinted near-white body.",
+    "overview": "This is a hand-bound literary journal on the web — calm, considered, editorial. The prose is the point; everything else gets out of its way. The system pairs a reading-first serif (Newsreader) with a quiet geometric sans (Geist) that carries titles, headings, and navigation alike, so the eye always knows whether it's reading or orienting. Whitespace is the primary material, not a leftover.\n\nThe site explicitly rejects SaaS landing-page tropes — no hero-metric stat blocks, no gradient accents, no saturated banner sections, no identical icon-card grids. It rejects brutalist / maximalist type — no oversized display that sacrifices readability for impact, no type experiments that turn the page into noise. And it refuses the warm beige / cream / sand default: the light surface is a warm stone neutral (#E7E5E4), clearly stone, not paper-pulp. Warmth is carried by the writing, the type pairing, and one small green accent — never by a tinted near-white body.",
     "keyCharacteristics": [
       "Reading-first: 68ch measure, 1.75 leading, serif body, contrast tuned for long sessions.",
       "One voice: a single lime accent on ≤5% of any screen. Its rarity is the point.",
@@ -290,7 +290,7 @@
     ],
     "dos": [
       "Do cap prose measure at 68ch (.post { max-width: 68ch }). The post column is the reading unit.",
-      "Do use the three-family system as intended: Newsreader for reading, Inter Tight for titles, Geist for navigation/labels. Don't blur the roles.",
+      "Do use the two-family system as intended: Newsreader for reading, Geist for titles, headings, and navigation/labels. Don't blur the roles.",
       "Do keep body text contrast ≥4.5:1. Ink Body (zinc-800) on Warm Stone Paper (stone-200) passes; dark-mode Ink Soft (zinc-200) on Quiet Ink (zinc-950) passes. When in doubt, darken the ink.",
       "Do use text-wrap: balance on h1–h3 and text-wrap: pretty on long prose to reduce orphans.",
       "Do honor prefers-reduced-motion: every transition needs a crossfade or instant fallback.",

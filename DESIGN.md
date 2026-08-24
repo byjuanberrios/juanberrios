@@ -43,7 +43,7 @@ colors:
     role: Dark-mode rules, borders (zinc-700).
 typography:
   display:
-    fontFamily: "Inter Tight, var(--font-interdisplay), system-ui, sans-serif"
+    fontFamily: "Geist, var(--font-geist), system-ui, sans-serif"
     fontSize: "clamp(1.875rem, 5vw, 3rem)"
     fontWeight: 600
     lineHeight: "135%"
@@ -119,7 +119,7 @@ components:
 
 **Creative North Star: "The Editorial Sanctuary"**
 
-This is a hand-bound literary journal on the web — calm, considered, editorial. The prose is the point; everything else gets out of its way. The system pairs a reading-first serif (Newsreader) with a tight grotesque display (Inter Tight) and a quiet geometric sans for navigation (Geist), so the eye always knows whether it's reading, orienting, or navigating. Whitespace is the primary material, not a leftover.
+This is a hand-bound literary journal on the web — calm, considered, editorial. The prose is the point; everything else gets out of its way. The system pairs a reading-first serif (Newsreader) with a quiet geometric sans (Geist) that carries titles, headings, and navigation alike, so the eye always knows whether it's reading or orienting. Whitespace is the primary material, not a leftover.
 
 The site explicitly rejects SaaS landing-page tropes — no hero-metric stat blocks, no gradient accents, no saturated banner sections, no identical icon-card grids. It rejects brutalist / maximalist type — no oversized display that sacrifices readability for impact, no type experiments that turn the page into noise. And it refuses the warm beige / cream / sand default: the light surface is a warm stone neutral (#E7E5E4), clearly stone, not paper-pulp. Warmth is carried by the writing, the type pairing, and one small green accent — never by a tinted near-white body.
 
@@ -153,16 +153,15 @@ A warm-stone paper, a quiet near-black ink, and one garden-lime accent that mark
 
 ## 3. Typography
 
-**Display Font:** Inter Tight (var(--font-interdisplay), fallback system-ui sans-serif)
-**Sans / UI Font:** Geist (var(--font-geist), fallback system-ui sans-serif)
+**Display / Sans / UI Font:** Geist (var(--font-geist), fallback system-ui sans-serif)
 **Body Font:** Newsreader (var(--font-newsreader), fallback Georgia, serif)
 
-**Character:** A three-family system on a contrast axis. Newsreader (a transitional serif) carries all reading — generous, warm, built for long measure. Inter Tight (a tight grotesque) carries page titles and post headings — it's the orientation layer, denser and more present than the body. Geist (a geometric sans) carries navigation, labels, dates, tags, and UI — it's the wayfinding layer, quiet and functional. The pairing is serif-for-reading + grotesque-for-titles + sans-for-navigation: editorial, not decorative.
+**Character:** A two-family system on a contrast axis. Newsreader (a transitional serif) carries all reading — generous, warm, built for long measure. Geist (a geometric sans) carries everything else — page titles, post headings, navigation, labels, dates, tags, and UI — it's the single orientation layer, quiet and functional at every size. The pairing is serif-for-reading + sans-for-everything-else: editorial, not decorative.
 
 ### Hierarchy
-- **Display** (Inter Tight, 600, clamp(1.875rem, 5vw, 3rem), 135% line-height, 0.02em tracking): Page titles (Bookmarks, Playlists, /this, posts index) and individual post titles. The largest type on the site; never larger than 3rem.
-- **Post Heading H2** (Inter Tight, 600, 1.25rem → 1.375rem, 145% line-height, 0.02em tracking): Section headings inside posts.
-- **Post Heading H3** (Inter Tight, 600, 1.125rem → 1.375rem, 150% line-height): Sub-section headings inside posts.
+- **Display** (Geist, 600, clamp(1.875rem, 5vw, 3rem), 135% line-height, 0.02em tracking): Page titles (Bookmarks, Playlists, /this, posts index) and individual post titles. The largest type on the site; never larger than 3rem.
+- **Post Heading H2** (Geist, 600, 1.25rem → 1.375rem, 145% line-height, 0.02em tracking): Section headings inside posts.
+- **Post Heading H3** (Geist, 600, 1.125rem → 1.375rem, 150% line-height): Sub-section headings inside posts.
 - **UI Heading** (Geist, 600, 1rem, 1.625 line-height): The non-post h1–h6 base; section labels like "Posts", "Sobre mi", year headers in the archive.
 - **Body** (Newsreader, 400, clamp(0.875rem, 0.25vw + 0.85rem, 1.125rem), 1.75 line-height): All prose. Capped at 68ch via the `.post` container. This is the reading unit.
 - **Label** (Geist, 400–600, 0.75rem–0.875rem, 1.5 line-height): Navigation items, dates, tags, "Siguiente" / "Anterior" labels, footer text. Resting state at opacity 0.5–0.8 (but see The Opacity-Honest Rule below).
@@ -214,13 +213,13 @@ An album-art + links card for the playlists page. Square cover image, artist/rel
 - **Links:** external, `target="_blank" rel="noopener noreferrer"`.
 
 ### Prose Container (.post)
-The reading unit. `max-width: 68ch`, Newsreader, 1.75 leading on paragraphs. Headings switch to Inter Tight with 0.02em tracking. Lists use a hollow-bullet `◦` marker. Code blocks get a sticky language label via `pre::before { content: attr(data-language) }`. The footnotes section hides its h2 and dims to `opacity: 0.7`.
+The reading unit. `max-width: 68ch`, Newsreader, 1.75 leading on paragraphs. Headings switch to Geist with 0.02em tracking. Lists use a hollow-bullet `◦` marker. Code blocks get a sticky language label via `pre::before { content: attr(data-language) }`. The footnotes section hides its h2 and dims to `opacity: 0.7`.
 
 ## 6. Do's and Don'ts
 
 ### Do:
 - **Do** cap prose measure at 68ch (`.post { max-width: 68ch }`). The post column is the reading unit.
-- **Do** use the three-family system as intended: Newsreader for reading, Inter Tight for titles, Geist for navigation/labels. Don't blur the roles.
+- **Do** use the two-family system as intended: Newsreader for reading, Geist for titles, headings, and navigation/labels. Don't blur the roles.
 - **Do** keep body text contrast ≥4.5:1. Ink Body (zinc-800) on Warm Stone Paper (stone-200) passes; dark-mode Ink Soft (zinc-200) on Quiet Ink (zinc-950) passes. When in doubt, darken the ink.
 - **Do** use `text-wrap: balance` on h1–h3 and `text-wrap: pretty` on long prose to reduce orphans.
 - **Do** honor `prefers-reduced-motion`: every transition needs a crossfade or instant fallback.

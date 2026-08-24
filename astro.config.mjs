@@ -45,15 +45,6 @@ export default defineConfig({
         display: "swap",
         subsets: ["latin"],
       },
-      {
-        name: "Inter Tight",
-        provider: fontProviders.google(),
-        cssVariable: "--font-interdisplay",
-        weights: ["400 700"],
-        styles: ["normal", "italic"],
-        display: "swap",
-        subsets: ["latin"],
-      },
     ],
   },
 });
