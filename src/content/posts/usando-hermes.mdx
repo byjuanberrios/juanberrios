@@ -1,0 +1,46 @@
+---
+title: Usando Hermes
+date: "2026-08-26"
+summary: Cómo Hermes, un agente de inteligencia artificial autónomo open source, transformó mi forma de trabajar.
+tags: 
+    - Personal
+    - Hermes
+    - IA
+    - Productividad
+isPublished: true
+hide: false
+---
+
+Hace algún tiempo se puso de moda hablar de Hermes, un agente de inteligencia artificial autónomo open source.
+
+En un principio no podía entender su utilidad y consideraba que muchos lo estaban usando solo por el hype.
+
+¿Cómo está herramienta podría sustituir a Claude, Gemini o ChatGPT? (*herramientas que uso a diario*)
+
+Un día, mi hermano, que también trabaja en el desarrollo de software me dijo —Mira, instalé Hermes y lo estoy usando para algunas cosas personales y de pega… anda super bien y vale la pena.
+
+Entonces dije, ok, lo voy a probar.
+
+Lo instalé en un VPS de Hetzner muy barato integrando Telegram como gateway para chatear con el. 
+
+Aun con la mente en blanco, le pregunté *¿qué puedes hacer?* Su respuesta me motivó a pedirle algunas tareas simples que realizaba bastante bien.
+
+Una cosa llevó a la otra y terminé conectando *mi cuenta personal de GMail*, *Cloudflare*, *GitHub*, *Google Drive*, *Calendar*, *Canva*, *GitLab*, *Obsidian*, *YouTube* y este sitio web. De un momento a otro Hermes me estaba borrando correo basura, desuscribiendo de newsletters, organizando archivos en Google Drive, haciendo resúmenes de algunas tareas para luego hacer deploy de ellas a Cloudflare, abriéndo túneles con *Cloudflared* para cosas específicas, recordándo tareas, hasta procesando videos.
+
+Entendí que el brillo de Hermes es que aprende en cada interacción, convirtiéndose de a poco en una herramientas más ajustada a tus necesidades.
+
+## Cómo lo uso
+
+Hermes te da la libertad de conectarte al modelo de IA que más se acomoda a tu bolsillo/expectativas. Por ejemplo, yo uso la suscripción de **Opencode Go** (*$10 dólares/mes*) con el modelo **Deepseek V4 flash** *que es estúpidamente económico y rápido*. Si bien para algunas tareas más complejas necesitas un modelo más potente como […inserte aquí el modelo en tendencia de esta semana…]. Hermes va ajustando lo esencial y repetitivo en skills, por lo que no es necesario gastar en algo muy costoso.
+
+La pregunta incomoda es *¿tiene sentido usar Hermes habiendo herramientas como Claude o Gemini?*
+
+Si. Las demás IA pueden ampliar tus capacidades, pero Hermes es una base operativa que se adapta a tus procesos y necesidades y fue creada desde un inicio para eso. En cambio las plataformas conocidas de IA son más cerradas y van construyendo sobre un ecosistema que no necesariamente fue pensado como un sistema autónomo que se automejora.
+
+## Setup actual
+
+Te dejo mi setup actual para ejecutar Hermes:
+- **Server**: Hetzner VPS CX33 eu-central (4 vCPU, 8GB RAM, 80GB SSD) ~$10/mes
+- **Instalación**: Clásica de <a href="https://hermes-agent.nousresearch.com/" rel="noopener noreferre" target="_blank">la web oficial</a>
+- **Gateway**: Telegram
+- **Suscripción IA**: <a href="https://opencode.ai/go?ref=SXY2AT3HFQ" rel="noopener noreferre" target="_blank">Deepseek V4 flash (*Opencode Go*)</a>
