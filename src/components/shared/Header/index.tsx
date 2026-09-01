@@ -1,5 +1,23 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
+import { X } from "lucide-react";
 import ToggleThemeButton from "./ToggleThemeButton";
+
+const MenuLink = ({
+  href,
+  className = "",
+  children,
+}: {
+  href: string;
+  className?: string;
+  children: ReactNode;
+}) => (
+  <a
+    href={href}
+    className={`flex items-center opacity-80 hover:opacity-100 transition-opacity ease-smooth duration-600 ${className}`}
+  >
+    {children}
+  </a>
+);
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,56 +34,46 @@ const Header = () => {
                 aria-expanded={menuOpen}
                 aria-controls="menu"
               >
-                {menuOpen ? (
-                  "Cerrar Menú"
-                ) : (
-                  <>
-                    <span className="flex items-center gap-1">
-                      <span className="grid grid-cols-2 w-3 h-3 items-center">
-                        <span className="block w-1 h-1 bg-neutral-800 dark:bg-stone-200"></span>
-                        <span className="block w-1 h-1 bg-neutral-800 dark:bg-stone-200"></span>
-                        <span className="block w-1 h-1 bg-neutral-800 dark:bg-stone-200"></span>
-                        <span className="block w-1 h-1 bg-neutral-800 dark:bg-stone-200"></span>
-                      </span>
-                      <span>Menú</span>
+                <span className="flex items-center gap-1">
+                  <span className="relative grid w-4 h-4 place-items-center">
+                    <span
+                      className={`col-start-1 row-start-1 grid grid-cols-2 w-3 h-3 items-center transition-all ease-smooth duration-400 ${menuOpen ? "opacity-0 scale-75 rotate-45" : "opacity-100 scale-100 rotate-0"}`}
+                    >
+                      <span className="block w-1 h-1 bg-vivid"></span>
+                      <span className="block w-1 h-1 bg-vivid"></span>
+                      <span className="block w-1 h-1 bg-vivid"></span>
+                      <span className="block w-1 h-1 bg-vivid"></span>
                     </span>
-                  </>
-                )}
+                    <X
+                      className={`col-start-1 row-start-1 w-4 h-4 text-vivid transition-all ease-smooth duration-400 ${menuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 -rotate-45"}`}
+                      strokeWidth={2.5}
+                    />
+                  </span>
+                  <span>{menuOpen ? "Cerrar Menú" : "Menú"}</span>
+                </span>
               </button>
             </div>
             <ToggleThemeButton />
           </div>
 
           <div
-            id="menu"
-            role="navigation"
-            aria-label="Navegación principal"
-            className={`w-full overflow-hidden ${menuOpen ? "max-h-screen" : "max-h-0"} order-1 md:order-2 transition-all ease-in-out duration-300 grid gap-1.5 md:gap-1`}
+            className={`w-full grid order-1 md:order-2 transition-[grid-template-rows,opacity] ease-smooth duration-500 ${menuOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
           >
-            <a
-              href="/"
-              className="mt-1.5 md:mt-1.5 opacity-80 hover:opacity-100 flex items-center"
+            <div
+              id="menu"
+              role="navigation"
+              aria-label="Navegación principal"
+              className="overflow-hidden grid gap-1.5 md:gap-1"
             >
-              Inicio
-            </a>
-            <a
-              href="/posts"
-              className="opacity-80 hover:opacity-100 flex items-center"
-            >
-              Posts
-            </a>
-            <a
-              href="/playlists"
-              className="opacity-80 hover:opacity-100 flex items-center"
-            >
-              Playlists
-            </a>
-            <a
-              href="/bookmarks"
-              className="mb-3 md:mb-1 opacity-80 hover:opacity-100 flex items-center"
-            >
-              Marcadores
-            </a>
+              <MenuLink href="/" className="mt-1.5 md:mt-1.5">
+                Inicio
+              </MenuLink>
+              <MenuLink href="/posts">Posts</MenuLink>
+              <MenuLink href="/playlists">Playlists</MenuLink>
+              <MenuLink href="/bookmarks" className="mb-3 md:mb-1">
+                Marcadores
+              </MenuLink>
+            </div>
           </div>
         </div>
       </div>

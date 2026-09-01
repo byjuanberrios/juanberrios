@@ -51,11 +51,11 @@ const allPostsLength = Object.keys(allPosts).reduce((acc, year) => {
                         <p class="title text-sm md:text-base text-zinc-800 dark:text-white max-w-[30ch] lg:max-w-[35ch] truncate">
                           {post.title}
                         </p>
-                        <hr class="h-px self-end border-b-1 dark:opacity-50 m-w-[1rem] mt-0 mb-[0.3rem] border-dashed w-full" />
+                        <hr class="h-px self-end w-full mt-0 mb-[0.3rem] border-0 border-b border-dashed border-zinc-300 dark:border-zinc-700" />
                         <span class="opacity-70 text-end self-end text-xs md:text-sm">
                           {day}/{month}
                         </span>
-                        <span class="block opacity-70">
+                        <span class="col-span-3 block opacity-70">
                           {post.tags && (
                             <span class="text-sm md:text-base font-serif italic">
                               {post.tags.map((tag, i) => (

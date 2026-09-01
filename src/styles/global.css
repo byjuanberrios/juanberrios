@@ -6,6 +6,8 @@
     --font-sans: var(--font-geist), sans-serif;
     --font-serif: var(--font-newsreader), serif;
     --tracking-wide: -0.001em;
+    --color-vivid: #F83001;
+    --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @layer base {
@@ -35,6 +37,10 @@
 
   h1, h2, h3 {
     text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-vivid) 20%, transparent);
   }
 
   :focus-visible {
@@ -324,12 +330,9 @@
 }
 
 .astro-loading-indicator {
-  background-color: var(--color-black);
+  background-color: var(--color-vivid);
 }
 .dark {
-  .astro-loading-indicator {
-    background-color: var(--color-white);
-  }
   --ring: oklch(0.985 0 0);
 }
 
