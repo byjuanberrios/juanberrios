@@ -1,4 +1,5 @@
 import { getCollection } from "astro:content";
+import { WIKIS } from "@/config";
 
 export const parseDate = (dateString: string) => {
   const [year, month, day] = dateString.slice(0, 10).split("-");
@@ -69,6 +70,61 @@ export const getPublishedPostsByYear = async () => {
   }, {} as publishedPostsByYearType);
 
   return allPostsByYear;
+};
+
+export type wikiEntriesByTopicType = {
+  [key: string]: {
+    slug: string;
+    title: string;
+    summary: string | undefined;
+    updated: string;
+  }[];
+};
+
+const getPublishedWikiEntries = async () =>
+  (await getCollection("wiki")).filter((entry) => entry.data.isPublished === true);
+
+export const getWikiSlug = (id: string) => id.split("/")[0];
+
+export const getEntrySlug = (id: string) => id.split("/").slice(1).join("/");
+
+export const getWikis = async () => {
+  const entries = await getPublishedWikiEntries();
+
+  return WIKIS.map((wiki) => ({
+    ...wiki,
+    count: entries.filter((entry) => getWikiSlug(entry.id) === wiki.slug).length,
+  })).filter((wiki) => wiki.count > 0);
+};
+
+export const getWikiEntriesByTopic = async (wikiSlug: string) => {
+  const entries = (await getPublishedWikiEntries())
+    .filter((entry) => getWikiSlug(entry.id) === wikiSlug)
+    .map((entry) => ({
+      slug: getEntrySlug(entry.id),
+      title: entry.data.title,
+      summary: entry.data.summary,
+      topic: entry.data.topic,
+      updated: entry.data.updated,
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title, "es"));
+
+  const entriesByTopic = entries.reduce((acc, entry) => {
+    if (!acc[entry.topic]) {
+      acc[entry.topic] = [];
+    }
+
+    acc[entry.topic].push({
+      slug: entry.slug,
+      title: entry.title,
+      summary: entry.summary,
+      updated: entry.updated,
+    });
+
+    return acc;
+  }, {} as wikiEntriesByTopicType);
+
+  return entriesByTopic;
 };
 
 const HTML_ENTITIES: Record<string, string> = {

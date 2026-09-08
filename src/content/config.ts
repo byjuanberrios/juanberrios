@@ -23,6 +23,18 @@ const pageCollection = defineCollection({
   }),
 });
 
+const wikiCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/wiki" }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string().optional(),
+    topic: z.string(),
+    updated: z.string(),
+    related: z.array(z.string()).optional().default([]),
+    isPublished: z.boolean(),
+  }),
+});
+
 const bookmarksCollection = defineCollection({
   loader: file("./src/content/bookmarks.json"),
   schema: z.object({
@@ -37,5 +49,6 @@ const bookmarksCollection = defineCollection({
 export const collections = {
   posts: postCollection,
   pages: pageCollection,
+  wiki: wikiCollection,
   bookmarks: bookmarksCollection,
 };

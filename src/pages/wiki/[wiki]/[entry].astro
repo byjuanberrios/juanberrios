@@ -1,0 +1,143 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layout/Layout.astro";
+import { WIKIS } from "@/config";
+import { parseDate, formatDateInChile, getWikiSlug, getEntrySlug } from "@/utils";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("wiki", ({ data }) => {
+    return data.isPublished === true;
+  });
+
+  // `related` acepta el slug corto de una entrada del mismo wiki
+  // ("sola-scriptura") o el id completo de otra ("teologia/sola-scriptura").
+  const resolveRef = (ref: string, fromWiki: string) =>
+    entries.find((candidate) => candidate.id === `${fromWiki}/${ref}`)?.id ??
+    entries.find((candidate) => candidate.id === ref)?.id;
+
+  // Las referencias son recíprocas: si A declara a B, B también muestra a A.
+  const declared = new Map<string, Set<string>>(
+    entries.map((entry) => [
+      entry.id,
+      new Set(
+        (entry.data.related ?? [])
+          .map((ref) => resolveRef(ref, getWikiSlug(entry.id)))
+          .filter((id) => id !== undefined && id !== entry.id),
+      ),
+    ]),
+  );
+
+  return entries.map((entry) => {
+    const incoming = entries
+      .filter((candidate) => declared.get(candidate.id)?.has(entry.id))
+      .map((candidate) => candidate.id);
+
+    const relatedIds = new Set([...declared.get(entry.id)!, ...incoming]);
+
+    const related = entries
+      .filter((candidate) => relatedIds.has(candidate.id))
+      .sort((a, b) => a.data.title.localeCompare(b.data.title, "es"));
+
+    return {
+      params: { wiki: getWikiSlug(entry.id), entry: getEntrySlug(entry.id) },
+      props: {
+        entry,
+        related,
+        wiki: WIKIS.find((w) => w.slug === getWikiSlug(entry.id)),
+      },
+    };
+  });
+}
+
+const { entry, related, wiki } = Astro.props;
+const { Content } = await render(entry);
+
+const updatedDate = parseDate(entry.data.updated);
+const longMonth = formatDateInChile(updatedDate, { month: "long" });
+const day = formatDateInChile(updatedDate, { day: "numeric" });
+const year = formatDateInChile(updatedDate, { year: "numeric" });
+
+const crumbLink =
+  "underline underline-offset-[0.2em] decoration-[0.05em] decoration-zinc-400 hover:decoration-zinc-900 dark:decoration-zinc-500 dark:hover:decoration-zinc-200 transition-all ease-out duration-200";
+---
+
+<Layout title={entry.data.title} description={entry.data.summary}>
+  <header
+    class="lateral-spacing mt-42 md:mt-68 mb-18 md:mb-24 font-sans text-center"
+  >
+    <p class="text-sm md:text-base mb-3 md:mb-4 opacity-70">
+      <span>Wiki</span>
+      {
+        wiki && (
+          <>
+            <span class="opacity-70"> / </span>
+            <a href={`/wiki/${wiki.slug}`} class={crumbLink}>
+              {wiki.name}
+            </a>
+          </>
+        )
+      }
+      <span class="opacity-70"> / {entry.data.topic}</span>
+    </p>
+    <h1
+      class="text-[1.8rem] md:text-[2.8rem] font-sans tracking-tight text-pretty leading-tight mb-4 md:mb-6 mx-auto max-w-[95%] md:max-w-[90%]"
+    >
+      {entry.data.title}
+    </h1>
+    {
+      entry.data.summary && (
+        <p class="font-serif italic text-sm md:text-base opacity-70 leading-snug mx-auto max-w-[60ch]">
+          {entry.data.summary}
+        </p>
+      )
+    }
+  </header>
+
+  <section class="lateral-spacing">
+    <div class="prose post">
+      <Content />
+    </div>
+  </section>
+
+  <section class="lateral-spacing mt-12">
+    <p>—</p>
+    <p
+      class="font-sans opacity-70 text-xs md:text-sm mt-4 md:mt-7 leading-snug"
+    >
+      Última revisión: {day} de <span class="capitalize">{longMonth}</span> de {
+        year
+      }
+    </p>
+  </section>
+
+  <!-- Ver también -->
+  {
+    related.length > 0 && (
+      <section class="lateral-spacing mt-18 md:mt-24">
+        <hr class="w-full border-zinc-200 dark:border-zinc-800" />
+        <div class="mt-8">
+          <p class="mb-2.5 md:mb-3 opacity-70 font-sans text-xs md:text-sm">
+            Ver también
+          </p>
+          <div class="grid gap-1.5 md:gap-2">
+            {related.map((relatedEntry) => {
+              const relatedWikiSlug = getWikiSlug(relatedEntry.id);
+              const relatedWiki = WIKIS.find((w) => w.slug === relatedWikiSlug);
+              return (
+                <a
+                  href={`/wiki/${relatedEntry.id}`}
+                  class="text-sm md:text-base font-sans tracking-normal page-link underline underline-offset-[0.2em] decoration-[0.05em] text-zinc-600 decoration-zinc-400 hover:decoration-zinc-900 dark:text-zinc-300 dark:hover:decoration-zinc-200 transition-all ease-out duration-200 justify-self-start"
+                >
+                  {relatedEntry.data.title}
+                  {relatedWikiSlug !== getWikiSlug(entry.id) && relatedWiki && (
+                    <span class="opacity-60 no-underline"> ({relatedWiki.name})</span>
+                  )}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</Layout>

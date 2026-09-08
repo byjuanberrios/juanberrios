@@ -1,0 +1,78 @@
+---
+import { getWikiEntriesByTopic } from "@/utils";
+import { WIKIS } from "@/config";
+import Layout from "@/layout/Layout.astro";
+
+export async function getStaticPaths() {
+  return WIKIS.map((wiki) => ({
+    params: { wiki: wiki.slug },
+    props: { wiki },
+  }));
+}
+
+const { wiki } = Astro.props;
+const entriesByTopic = await getWikiEntriesByTopic(wiki.slug);
+const entriesLength = Object.keys(entriesByTopic).reduce((acc, topic) => {
+  return acc + entriesByTopic[topic].length;
+}, 0);
+---
+
+<Layout title={`Wiki de ${wiki.name}`} description={wiki.description}>
+  <header
+    class="lateral-spacing mt-42 md:mt-68 mb-14 md:mb-18 flex justify-between items-end"
+  >
+    <div>
+      <p class="text-sm md:text-base mb-2.5 md:mb-4 opacity-70 font-sans">
+        Wiki
+      </p>
+      <h1 class="text-3xl md:text-5xl font-sans tracking-tight">
+        {wiki.name}
+      </h1>
+    </div>
+    <span class="text-xs md:text-sm opacity-70 font-sans">
+      (<span class="italic">{entriesLength}</span>
+      {entriesLength === 1 ? "entrada" : "entradas"})
+    </span>
+  </header>
+
+  <section class="lateral-spacing">
+    <p class="prose post mb-12 md:mb-16">{wiki.intro}</p>
+
+    <div>
+      {
+        Object.keys(entriesByTopic)
+          .sort((topicA, topicB) => topicA.localeCompare(topicB, "es"))
+          .map((topic) => (
+            <div class="mb-10 md:mb-12 lg:mb-14 last:mb-0">
+              <h2 class="font-semibold mb-5 text-base md:text-lg">{topic}</h2>
+              <div class="grid gap-3 md:gap-3.5">
+                {entriesByTopic[topic].map((entry) => {
+                  const month = entry.updated.slice(5, 7);
+                  const day = entry.updated.slice(8, 10);
+                  return (
+                    <a
+                      class="w-full grid grid-cols-[auto_1fr_auto] gap-x-2 leading-snug opacity-80 hover:opacity-100 tracking-normal font-sans truncate"
+                      href={`/wiki/${wiki.slug}/${entry.slug}`}
+                    >
+                      <p class="title text-sm md:text-base text-zinc-800 dark:text-white max-w-[30ch] lg:max-w-[35ch] truncate">
+                        {entry.title}
+                      </p>
+                      <hr class="h-px self-end w-full mt-0 mb-[0.3rem] border-0 border-b border-dashed border-zinc-300 dark:border-zinc-700" />
+                      <span class="opacity-70 text-end self-end text-xs md:text-sm">
+                        {day}/{month}
+                      </span>
+                      {entry.summary && (
+                        <span class="col-span-3 block opacity-70 text-sm md:text-base font-serif italic truncate">
+                          {entry.summary}
+                        </span>
+                      )}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          ))
+      }
+    </div>
+  </section>
+</Layout>
