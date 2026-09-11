@@ -5,8 +5,9 @@
 @theme {
     --font-sans: var(--font-geist), sans-serif;
     --font-serif: var(--font-newsreader), serif;
-    --tracking-wide: -0.001em;
+    --tracking-wide: -0.005em;
     --color-vivid: #F83001;
+    --color-vivid-light: #FF5731;
     --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -139,7 +140,7 @@
     }
 
     h2 {
-      font-size: var(--text-xl);
+      font-size: var(--text-2xl);
       line-height: 145%;
       margin-top: calc(var(--spacing) * 11);
       &~p {
@@ -148,7 +149,7 @@
     }
 
     h3 {
-      font-size: var(--text-lg);
+      font-size: var(--text-xl);
       line-height: 150%;
       margin-top: calc(var(--spacing) * 10);
       &~p {
@@ -280,7 +281,7 @@
 
   hr {
     margin-block: calc(var(--spacing) * 16);
-    border-color: var(--color-zinc-200);
+    border-color: var(--color-zinc-300);
     width: 25%;
     margin-inline: auto;
   }

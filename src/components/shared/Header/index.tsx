@@ -39,13 +39,13 @@ const Header = () => {
                     <span
                       className={`col-start-1 row-start-1 grid grid-cols-2 w-3 h-3 items-center transition-all ease-smooth duration-400 ${menuOpen ? "opacity-0 scale-75 rotate-45" : "opacity-100 scale-100 rotate-0"}`}
                     >
-                      <span className="block w-1 h-1 bg-vivid"></span>
-                      <span className="block w-1 h-1 bg-vivid"></span>
-                      <span className="block w-1 h-1 bg-vivid"></span>
-                      <span className="block w-1 h-1 bg-vivid"></span>
+                      <span className="block w-1 h-1 bg-vivid dark:bg-vivid-light"></span>
+                      <span className="block w-1 h-1 bg-vivid dark:bg-vivid-light"></span>
+                      <span className="block w-1 h-1 bg-vivid dark:bg-vivid-light"></span>
+                      <span className="block w-1 h-1 bg-vivid dark:bg-vivid-light"></span>
                     </span>
                     <X
-                      className={`col-start-1 row-start-1 w-4 h-4 text-vivid transition-all ease-smooth duration-400 ${menuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 -rotate-45"}`}
+                      className={`col-start-1 row-start-1 w-4 h-4 text-vivid dark:text-vivid-light transition-all ease-smooth duration-400 ${menuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 -rotate-45"}`}
                       strokeWidth={2.5}
                     />
                   </span>
