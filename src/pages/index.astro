@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import Layout from "../layout/Layout.astro";
 import { getPublishedPosts } from "@/utils";
-import meImage from "@/assets/images/avatar_new.webp";
 
 const allPosts = await getPublishedPosts();
 ---
@@ -14,7 +13,8 @@ const allPosts = await getPublishedPosts();
   >
     <div class="md:w-2/6">
       <Image
-        src={meImage}
+        src="https://storage.juanberrios.com/avatar-3.jpeg"
+        inferSize
         alt="Avatar de Juan Berrios"
         loading="eager"
         class="w-16 md:w-18 h-16 md:h-18 rounded-full object-contain"
