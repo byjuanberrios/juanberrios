@@ -69,9 +69,8 @@ const Header = () => {
                 Inicio
               </MenuLink>
               <MenuLink href="/posts">Posts</MenuLink>
-              <MenuLink href="/playlists">Playlists</MenuLink>
-              <MenuLink href="/bookmarks" className="mb-3 md:mb-1">
-                Marcadores
+              <MenuLink href="/playlists" className="mb-3 md:mb-1">
+                Playlists
               </MenuLink>
             </div>
           </div>
