@@ -5,7 +5,7 @@
 @theme {
     --font-sans: var(--font-geist), sans-serif;
     --font-serif: var(--font-newsreader), serif;
-    --tracking-wide: -0.005em;
+    --tracking-wide: -0.01em;
     --color-vivid: #F83001;
     --color-vivid-light: #FF5731;
     --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
@@ -132,7 +132,7 @@
       margin-top: calc(var(--spacing) * -0.5);
       margin-bottom: calc(var(--spacing) * 8);
       line-height: var(--leading-relaxed);
-  }
+    }
 
     h1, h2, h3, h4, h5, h6 {
       letter-spacing: var(--tracking-wide);
@@ -140,7 +140,8 @@
     }
 
     h2 {
-      font-size: var(--text-2xl);
+      font-size: calc(var(--text-2xl) * 0.95);
+      /* font-size: var(--text-2xl); */
       line-height: 145%;
       margin-top: calc(var(--spacing) * 11);
       &~p {
@@ -205,6 +206,14 @@
     ol {
         list-style-type: decimal;
     }
+
+    sup {
+      /* color: var(--color-zinc-400); */
+      color: var(--color-vivid);
+      a {
+        text-decoration-color: transparent;
+      }
+    }
   }
   .dark .post {
     a {
@@ -212,6 +221,10 @@
       &:hover {
         text-decoration-color: var(--color-zinc-200);
       }
+    }
+    sup {
+      /* color: var(--color-zinc-400); */
+      color: var(--color-vivid-light);
     }
   }
 
@@ -299,6 +312,11 @@
     ol, p {
         opacity: 0.7;
     }
+    ol {
+      p {
+        margin: 0;
+      }
+    } 
   }
   .dark .footnotes {
     border-top: dashed 1px var(--color-zinc-800)

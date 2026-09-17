@@ -2,7 +2,12 @@
 import { getCollection, render } from "astro:content";
 import Layout from "@/layout/Layout.astro";
 import { WIKIS } from "@/config";
-import { parseDate, formatDateInChile, getWikiSlug, getEntrySlug } from "@/utils";
+import {
+  parseDate,
+  formatDateInChile,
+  getWikiSlug,
+  getEntrySlug,
+} from "@/utils";
 
 export async function getStaticPaths() {
   const entries = await getCollection("wiki", ({ data }) => {
@@ -86,7 +91,7 @@ const crumbLink =
     </h1>
     {
       entry.data.summary && (
-        <p class="font-serif italic text-sm md:text-base opacity-70 leading-snug mx-auto max-w-[60ch]">
+        <p class="font-serif italic text-sm md:text-base opacity-70 leading-snug mx-auto max-w-[60ch] tracking-[0.02rem]">
           {entry.data.summary}
         </p>
       )
@@ -130,7 +135,10 @@ const crumbLink =
                 >
                   {relatedEntry.data.title}
                   {relatedWikiSlug !== getWikiSlug(entry.id) && relatedWiki && (
-                    <span class="opacity-60 no-underline"> ({relatedWiki.name})</span>
+                    <span class="opacity-60 no-underline">
+                      {" "}
+                      ({relatedWiki.name})
+                    </span>
                   )}
                 </a>
               );
