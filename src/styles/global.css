@@ -212,14 +212,17 @@
       color: var(--color-vivid);
       a {
         text-decoration-color: transparent;
+        &:hover {
+          text-decoration-color: var(--color-vivid);
+        }
       }
     }
   }
   .dark .post {
     a {
-      text-decoration-color: var(--color-zinc-500);
+      text-decoration-color: transparent;
       &:hover {
-        text-decoration-color: var(--color-zinc-200);
+        text-decoration-color: var(--color-vivid-light);
       }
     }
     sup {
