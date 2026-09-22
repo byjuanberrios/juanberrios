@@ -35,7 +35,13 @@ const day = formatDateInChile(postDate, { day: "numeric" });
 const year = formatDateInChile(postDate, { year: "numeric" });
 ---
 
-<Layout title={post.data.title}>
+<Layout
+  title={post.data.title}
+  description={post.data.summary}
+  ogImage={`/og/posts/${post.id}.png`}
+  ogType="article"
+  publishedTime={post.data.date}
+>
   <header
     class="lateral-spacing mt-42 md:mt-68 mb-18 md:mb-24 font-sans text-center"
   >

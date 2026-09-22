@@ -14,7 +14,9 @@ const allPosts = await getPublishedPosts();
     <div class="md:w-2/6">
       <Image
         src="https://storage.juanberrios.com/avatar-3.jpeg"
-        inferSize
+        width={72}
+        height={72}
+        densities={[1, 2]}
         alt="Avatar de Juan Berrios"
         loading="eager"
         class="w-16 md:w-18 h-16 md:h-18 rounded-full object-contain"

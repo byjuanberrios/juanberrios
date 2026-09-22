@@ -1,5 +1,3 @@
-import socialImage from "./assets/images/social.webp";
-
 export const SITE: {
   name: string;
   description: string;
@@ -16,10 +14,7 @@ export const SITE: {
   website: "https://juanberrios.com",
   author: "Juan Berrios",
   profile: "https://juanberrios.com",
-  ogImage: socialImage.src,
-  // copyright: "(c) Nombre de la empresa",
-  // twitterUsername: "@nombredeusuario",
-  // twitterDomain: "www.example.com",
+  ogImage: "/og.png",
 } as const;
 
 export const WIKIS: {

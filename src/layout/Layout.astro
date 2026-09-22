@@ -15,7 +15,8 @@ import "@/styles/global.css";
 import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer.astro";
 
-const { title, description, ogImage } = Astro.props as SEOProps;
+const { title, description, ogImage, ogType, publishedTime } =
+  Astro.props as SEOProps;
 ---
 
 <!doctype html>
@@ -28,6 +29,8 @@ const { title, description, ogImage } = Astro.props as SEOProps;
         title,
         description,
         ogImage,
+        ogType,
+        publishedTime,
       }}
     />
     <Font cssVariable="--font-geist" preload />
