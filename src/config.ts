@@ -28,6 +28,6 @@ export const WIKIS: {
     name: "Teología",
     description: "Apuntes de lectura sobre teología reformada",
     intro:
-      "Apuntes de un lector, no una enciclopedia. Son notas que voy escribiendo para entender mejor lo que creo, y que corrijo cuando entiendo algo mejor. No están terminadas y probablemente nunca lo estén.",
+      "Apuntes de lectura, conceptos bíblicos y teológicos, no una enciclopedia. Son notas que voy escribiendo para entender mejor lo que creo, y que corrijo cuando entiendo algo mejor. No están terminadas y probablemente nunca lo estén. No tengo estudios teológicos formales.",
   },
 ];
