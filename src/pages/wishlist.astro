@@ -1,0 +1,81 @@
+---
+import Layout from "@/layout/Layout.astro";
+import WishlistItem from "@/components/WishlistItem.astro";
+import { getCollection } from "astro:content";
+
+const slugify = (s: string) =>
+  s
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-");
+
+const items = (await getCollection("wishlist"))
+  .map((entry) => entry.data)
+  .sort((a, b) => a.position - b.position);
+
+const wishlist = items.reduce<{ category: string; items: typeof items }[]>(
+  (groups, item) => {
+    const group = groups.find((g) => g.category === item.category);
+    if (group) group.items.push(item);
+    else groups.push({ category: item.category, items: [item] });
+    return groups;
+  },
+  [],
+);
+---
+
+<Layout
+  title="Wishlist"
+  description="Cosas que necesito o quiero comprar, con los links de dónde conseguirlas"
+>
+  <header class="lateral-spacing mt-42 md:mt-76 mb-12 md:mb-18">
+    <h1
+      class="text-3xl md:text-5xl font-sans tracking-tight text-pretty leading-tight pr-6"
+    >
+      Wishlist
+    </h1>
+  </header>
+  <section class="lateral-spacing">
+    <div class="prose post">
+      <p class="mb-6 md:mb-8">
+        Lista personal de cosas que necesito o quiero comprar más adelante, con
+        los links de las tiendas donde las venden. Es para consultarla yo
+        cuando la necesite; los precios son referenciales.
+      </p>
+      <nav
+        aria-label="Categorías"
+        class="flex flex-wrap gap-2 mb-10 md:mb-14 font-sans"
+      >
+        {
+          wishlist.map((group) => (
+            <a
+              href={`#${slugify(group.category)}`}
+              class="no-underline before:hidden text-xs md:text-sm px-3 py-1 rounded-full border border-zinc-300 dark:border-neutral-600 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-neutral-700/60 transition-colors"
+            >
+              {group.category}
+              <span class="text-zinc-500 dark:text-zinc-500">
+                {group.items.length}
+              </span>
+            </a>
+          ))
+        }
+      </nav>
+      {
+        wishlist.map((group) => (
+          <section
+            id={slugify(group.category)}
+            class="scroll-mt-24 mb-10 md:mb-14"
+          >
+            <h2 class="mt-0 mb-4 md:mb-5">{group.category}</h2>
+            <div class="grid gap-2.5 md:gap-3">
+              {group.items.map((item) => (
+                <WishlistItem {...item} />
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

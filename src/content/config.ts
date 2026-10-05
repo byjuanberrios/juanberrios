@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { glob, file } from "astro/loaders";
+import { cmsWishlistLoader } from "../lib/cmsWishlist";
 
 const postCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/posts" }),
@@ -46,9 +47,23 @@ const bookmarksCollection = defineCollection({
   }),
 });
 
+const wishlistCollection = defineCollection({
+  loader: cmsWishlistLoader(),
+  schema: z.object({
+    name: z.string(),
+    category: z.string(),
+    image: z.string().nullable(),
+    note: z.string().optional(),
+    price: z.string().optional(),
+    links: z.array(z.object({ store: z.string(), url: z.string() })).min(1),
+    position: z.number(),
+  }),
+});
+
 export const collections = {
   posts: postCollection,
   pages: pageCollection,
   wiki: wikiCollection,
   bookmarks: bookmarksCollection,
+  wishlist: wishlistCollection,
 };

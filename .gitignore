@@ -25,3 +25,8 @@ pnpm-debug.log*
 
 # AI generated files
 .claude
+
+# wishlist: el contenido vive en el CMS (cms.juanberrios.com), no en el repo
+public/wishlist-img/
+src/content/wishlist.json
+src/assets/images/wishlist/
