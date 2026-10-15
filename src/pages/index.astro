@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Layout from "../layout/Layout.astro";
 import { getPublishedPosts } from "@/utils";
+import avatar from "@/assets/images/avatar.webp";
 
 const allPosts = await getPublishedPosts();
 ---
@@ -13,7 +14,7 @@ const allPosts = await getPublishedPosts();
   >
     <div class="md:w-2/6">
       <Image
-        src="https://storage.juanberrios.com/avatar-3.jpeg"
+        src={avatar}
         width={72}
         height={72}
         densities={[1, 2]}
