@@ -10,20 +10,20 @@ const allPosts = await getPublishedPosts();
 <Layout>
   <!-- Presentation -->
   <section
-    class="lateral-spacing mt-42 md:mt-76 mb-16 md:mb-18 grid gap-7 md:gap-0 md:flex items-start"
+    class="lateral-spacing mt-42 md:mt-76 mb-16 md:mb-26 grid gap-7 md:gap-0 md:flex items-center"
   >
     <div class="md:w-2/6">
       <Image
         src={avatar}
-        width={72}
-        height={72}
+        width={96}
+        height={96}
         densities={[1, 2]}
         alt="Avatar de Juan Berrios"
         loading="eager"
-        class="w-16 md:w-20 h-16 md:h-20 rounded-full object-contain"
+        class="w-18 md:w-22 h-18 md:h-22 rounded-full object-contain"
       />
     </div>
-    <p class="prose md:w-4/6">
+    <p class="prose md:w-4/6 md:mt-2">
       Este es el sitio web de <i>Juan Berrios</i>, un espacio personal
       minimalista para compartir pensamientos, gustos y experimentos digitales.
     </p>
